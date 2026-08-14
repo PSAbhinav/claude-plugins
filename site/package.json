@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "description": "Static marketplace dashboard + serverless usage analytics and admin panel.",
   "dependencies": {
-    "qrcode": "^1.5.4"
+    "qrcode": "^1.5.4",
+    "redis": "^4.7.0"
   }
 }

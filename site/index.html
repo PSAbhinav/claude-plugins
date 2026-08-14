@@ -365,6 +365,10 @@
   const key = i => `${i.kind}|${i.plugin||''}|${i.name}`;
   const byKey = new Map(items.map(i => [key(i), i]));
 
+  // ---------- anonymous usage tracking (aggregate popularity only; no personal data) ----------
+  const track = (name, action) => { try { fetch('/api/track', { method:'POST', keepalive:true, headers:{'Content-Type':'application/json'}, body:JSON.stringify({ name, action }) }).catch(()=>{}); } catch {} };
+  const trackCopy = text => { const s=String(text||''); if(/\/plugin\s+marketplace\s+add/.test(s)){ track('__marketplace__','copy'); } let m, re=/\/plugin install (\S+?)@/g; while((m=re.exec(s))){ track(m[1],'copy'); } };
+
   // ---------- icons ----------
   const ICONS = {
     all:'<path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/>',
@@ -565,9 +569,9 @@
   // ---------- events ----------
   document.body.addEventListener('click', e => {
     const copy=e.target.closest('[data-copy]');
-    if(copy){ navigator.clipboard.writeText(copy.dataset.copy); const t=copy.textContent; copy.textContent='copied ✓'; setTimeout(()=>copy.textContent=t,900); return; }
+    if(copy){ navigator.clipboard.writeText(copy.dataset.copy); trackCopy(copy.dataset.copy); const t=copy.textContent; copy.textContent='copied ✓'; setTimeout(()=>copy.textContent=t,900); return; }
     const st=e.target.closest('[data-stack]');
-    if(st){ addToStack(st.dataset.stack); const t=st.textContent; st.textContent='added ✓'; setTimeout(()=>st.textContent=t,900); return; }
+    if(st){ addToStack(st.dataset.stack); const _i=byKey.get(st.dataset.stack); if(_i&&_i.plugin){ track(_i.plugin,'add'); } const t=st.textContent; st.textContent='added ✓'; setTimeout(()=>st.textContent=t,900); return; }
     const un=e.target.closest('[data-unstack]');
     if(un){ stack = stack.filter(k=>k!==un.dataset.unstack); renderPill(); stack.length ? openStack() : overlay.classList.remove('open'); return; }
     if(e.target.id==='clearstack'){ stack=[]; renderPill(); overlay.classList.remove('open'); return; }

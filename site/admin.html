@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Admin · Claude Marketplace</title>
+<style>
+  :root{
+    --bg:#faf9f5; --panel:#ffffff; --border:#e7e4db; --border2:#d8d4c8;
+    --text:#1f1e1b; --dim:#6f6d66; --faint:#a3a099;
+    --accent:#d97748; --accent2:#c05f31; --accent-soft:rgba(217,119,72,.10);
+    --ok:#2e9e6b; --bad:#c9432f;
+    --mono:'JetBrains Mono','IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  }
+  html[data-theme="dark"]{
+    --bg:#101216; --panel:#191c22; --border:#2a2e37; --border2:#3b404b;
+    --text:#e9ebef; --dim:#9ba1ad; --faint:#646b77;
+    --accent:#e8945e; --accent2:#f0ad83; --accent-soft:rgba(232,148,94,.13);
+    --ok:#4bbd88; --bad:#e8765f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;min-height:100vh}
+  a{color:var(--accent);text-decoration:none}
+  button{font-family:var(--mono);color:inherit;cursor:pointer}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+  .wrap{max-width:980px;margin:0 auto;padding:26px 20px 60px}
+
+  header{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+  .mark{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:19px;flex-shrink:0}
+  .brand b{font-size:16px;font-weight:600;display:block;letter-spacing:.2px}
+  .brand small{color:var(--faint);font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase}
+  .spacer{margin-left:auto}
+  .btn{background:var(--panel);border:1px solid var(--border);color:var(--text);border-radius:9px;
+    padding:8px 13px;font-size:13px}
+  .btn:hover{border-color:var(--accent);background:var(--accent-soft)}
+  .btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+  .btn.solid:hover{background:var(--accent2)}
+
+  .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:20px}
+  .center{max-width:440px;margin:8vh auto 0}
+  h1{font-size:18px;margin:0 0 6px}
+  h2{font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--faint);margin:0 0 14px;font-weight:600}
+  p.muted{color:var(--dim);margin:0 0 16px;font-size:13px}
+  label{display:block;font-size:12px;color:var(--dim);margin:14px 0 6px}
+  input{width:100%;background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:11px 12px;
+    font-family:var(--mono);font-size:15px;color:var(--text);outline:none;letter-spacing:1px}
+  input:focus{border-color:var(--accent)}
+  input.pin{text-align:center;font-size:24px;letter-spacing:10px;padding-left:10px}
+  .row{display:flex;gap:10px;margin-top:18px}
+  .row .btn{flex:1;text-align:center;padding:11px}
+  .msg{margin-top:14px;font-size:12.5px;min-height:16px}
+  .msg.err{color:var(--bad)} .msg.ok{color:var(--ok)}
+  .qrbox{display:flex;flex-direction:column;align-items:center;gap:12px;margin:6px 0 4px}
+  .qrbox svg{width:200px;height:200px;background:#fff;border-radius:12px;padding:8px;border:1px solid var(--border)}
+  .secret{font-size:12px;color:var(--dim);word-break:break-all;background:var(--bg);border:1px dashed var(--border);
+    border-radius:8px;padding:8px 10px;text-align:center;letter-spacing:2px}
+
+  /* stats */
+  .grid{display:grid;gap:14px}
+  .kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr));margin-bottom:14px}
+  .kpi .lab{font-size:11px;color:var(--faint);letter-spacing:1px;text-transform:uppercase}
+  .kpi .val{font-size:30px;font-weight:600;margin-top:6px;line-height:1}
+  .kpi .sub{font-size:11.5px;color:var(--dim);margin-top:4px}
+  .two{grid-template-columns:1fr 1fr;margin-bottom:14px}
+  @media(max-width:720px){.two{grid-template-columns:1fr}}
+  .hero{display:flex;align-items:center;gap:16px}
+  .hero .medal{font-size:34px}
+  .hero .nm{font-size:19px;font-weight:600;word-break:break-word}
+  .hero .ct{margin-left:auto;text-align:right}
+  .hero .ct b{font-size:26px} .hero .ct span{display:block;font-size:11px;color:var(--faint);letter-spacing:1px;text-transform:uppercase}
+
+  .bar{display:flex;align-items:center;gap:10px;margin:9px 0;font-size:13px}
+  .bar .nm{width:120px;flex-shrink:0;color:var(--dim);text-transform:capitalize}
+  .bar .track{flex:1;height:12px;background:var(--bg);border:1px solid var(--border);border-radius:7px;overflow:hidden}
+  .bar .fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2));border-radius:7px;min-width:2px;
+    transition:width .6s cubic-bezier(.22,.61,.36,1)}
+  .bar .ct{width:74px;text-align:right;flex-shrink:0;color:var(--faint);font-size:12px}
+  .bar .ct b{color:var(--text)}
+
+  ol.lead{list-style:none;margin:0;padding:0;counter-reset:r}
+  ol.lead li{counter-increment:r;display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px dashed var(--border);font-size:13px}
+  ol.lead li:last-child{border-bottom:none}
+  ol.lead li::before{content:counter(r);width:22px;text-align:right;color:var(--faint);flex-shrink:0}
+  .chip{font-size:9.5px;letter-spacing:.6px;text-transform:uppercase;color:var(--accent2);border:1px solid var(--border);
+    border-radius:6px;padding:1px 6px;background:var(--accent-soft);flex-shrink:0}
+  ol.lead .pnm{word-break:break-word}
+  ol.lead .lct{margin-left:auto;flex-shrink:0;color:var(--text)}
+  ol.lead .lbar{width:26%;height:8px;background:var(--bg);border:1px solid var(--border);border-radius:5px;overflow:hidden;flex-shrink:0}
+  ol.lead .lbar i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+  @media(max-width:640px){ol.lead .lbar{display:none}}
+
+  .spark{display:flex;align-items:flex-end;gap:4px;height:80px;margin-top:6px}
+  .spark .d{flex:1;background:var(--accent-soft);border:1px solid var(--border);border-bottom:none;border-radius:5px 5px 0 0;
+    min-height:3px;position:relative}
+  .spark .d i{position:absolute;inset:0;background:linear-gradient(180deg,var(--accent),var(--accent2));opacity:.85;border-radius:5px 5px 0 0}
+  .spark .d span{position:absolute;bottom:-18px;left:0;right:0;text-align:center;font-size:9px;color:var(--faint)}
+  .empty{color:var(--dim);font-size:13px;text-align:center;padding:20px}
+  .foot{margin-top:26px;color:var(--faint);font-size:11.5px;text-align:center}
+  .hidden{display:none!important}
+  .note{font-size:11.5px;color:var(--faint);margin-top:10px;line-height:1.5}
+  code{background:var(--bg);border:1px solid var(--border);border-radius:5px;padding:1px 5px;font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="mark">C</div>
+    <div class="brand"><b>Claude Marketplace</b><small>Admin</small></div>
+    <div class="spacer"></div>
+    <button class="btn" id="themebtn" title="Toggle theme">◐</button>
+    <button class="btn hidden" id="refreshbtn" title="Refresh">↻ refresh</button>
+    <button class="btn hidden" id="logoutbtn">log out</button>
+  </header>
+
+  <!-- LOADING -->
+  <section id="s-load" class="card center"><p class="muted" style="margin:0">Loading…</p></section>
+
+  <!-- NOT CONFIGURED -->
+  <section id="s-cfg" class="card center hidden">
+    <h1>Setup needed</h1>
+    <p class="muted">The analytics backend isn't configured yet. In your Vercel project settings, add these environment variables, then redeploy:</p>
+    <div class="note">
+      <div><code>UPSTASH_REDIS_REST_URL</code> — from your Upstash Redis database</div>
+      <div><code>UPSTASH_REDIS_REST_TOKEN</code> — from Upstash</div>
+      <div><code>SESSION_SECRET</code> — any long random string</div>
+      <div><code>ADMIN_SETUP_KEY</code> — a secret only you know (unlocks first-time QR)</div>
+      <div><code>ADMIN_LABEL</code> — optional, e.g. your email (shown in Authenticator)</div>
+    </div>
+  </section>
+
+  <!-- ENROL (first time) -->
+  <section id="s-setup" class="card center hidden">
+    <h1>First-time setup</h1>
+    <p class="muted">Enter your setup key to reveal the one-time QR code. This is shown only once.</p>
+    <div id="setup-step1">
+      <label for="setupkey">Setup key</label>
+      <input id="setupkey" type="password" autocomplete="off" placeholder="your ADMIN_SETUP_KEY">
+      <div class="row"><button class="btn solid" id="setup-go">Reveal QR</button></div>
+      <div class="msg err" id="setup-msg1"></div>
+    </div>
+    <div id="setup-step2" class="hidden">
+      <p class="muted">Scan with <b>Google Authenticator</b> (or any TOTP app), then enter the 6-digit code to finish.</p>
+      <div class="qrbox"><div id="qr"></div><div class="secret" id="secret"></div></div>
+      <label for="pin-confirm">6-digit code</label>
+      <input id="pin-confirm" class="pin" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="••••••">
+      <div class="row"><button class="btn solid" id="confirm-go">Finish setup</button></div>
+      <div class="msg err" id="setup-msg2"></div>
+    </div>
+  </section>
+
+  <!-- LOGIN -->
+  <section id="s-login" class="card center hidden">
+    <h1>Admin login</h1>
+    <p class="muted">Enter the 6-digit code from your authenticator app.</p>
+    <label for="pin">Code</label>
+    <input id="pin" class="pin" inputmode="numeric" maxlength="6" autocomplete="one-time-code" placeholder="••••••">
+    <div class="row"><button class="btn solid" id="login-go">Log in</button></div>
+    <div class="msg err" id="login-msg"></div>
+  </section>
+
+  <!-- STATS -->
+  <section id="s-stats" class="hidden">
+    <div class="grid kpis" id="kpis"></div>
+    <div class="grid two">
+      <div class="card"><h2>Most used</h2><div id="hero"></div></div>
+      <div class="card"><h2>Copies vs stack-adds</h2><div id="actions"></div></div>
+    </div>
+    <div class="card" style="margin-bottom:14px"><h2>By type</h2><div id="types"></div></div>
+    <div class="card" style="margin-bottom:14px"><h2>Top 25 · most used</h2><div id="lead"></div></div>
+    <div class="card"><h2>Activity · last 14 days</h2><div id="trend"></div></div>
+    <p class="foot">Counts reflect on-dashboard activity (install-command copies and stack-adds) — not literal terminal installs, which a website can't see. Aggregate only; no per-visitor data is stored.</p>
+  </section>
+</div>
+
+<script>
+(() => {
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const show = id => { ['s-load','s-cfg','s-setup','s-login','s-stats'].forEach(x => $('#'+x).classList.toggle('hidden', x!==id)); };
+  const post = (u, body) => fetch(u, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(body||{})});
+
+  // theme
+  const setTheme = t => { document.documentElement.dataset.theme = t; try{localStorage.setItem('ccm-admin-theme',t);}catch{} };
+  setTheme((()=>{ try{return localStorage.getItem('ccm-admin-theme');}catch{} })() || (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light'));
+  $('#themebtn').onclick = () => setTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+
+  async function boot() {
+    show('s-load');
+    let st;
+    try { st = await (await fetch('/api/admin/state')).json(); }
+    catch { st = {}; }
+    if (!st.configured) return show('s-cfg');
+    if (st.authed) return loadStats();
+    if (!st.enrolled) return show('s-setup');
+    return show('s-login');
+  }
+
+  // ---- enrol ----
+  $('#setup-go').onclick = async () => {
+    const key = $('#setupkey').value.trim();
+    const m = $('#setup-msg1'); m.textContent = '';
+    if (!key) { m.textContent = 'Enter your setup key.'; return; }
+    const r = await post('/api/admin/setup', { setupKey:key });
+    const d = await r.json().catch(()=>({}));
+    if (!r.ok) { m.textContent = d.message || 'Setup failed.'; return; }
+    $('#qr').innerHTML = d.qrSvg || '';
+    $('#secret').textContent = d.secret || '';
+    $('#setup-step1').classList.add('hidden');
+    $('#setup-step2').classList.remove('hidden');
+    $('#pin-confirm').focus();
+  };
+  $('#confirm-go').onclick = async () => {
+    const pin = $('#pin-confirm').value.trim();
+    const m = $('#setup-msg2'); m.textContent = '';
+    const r = await post('/api/admin/login', { pin });
+    const d = await r.json().catch(()=>({}));
+    if (!r.ok) { m.textContent = d.message || 'Incorrect code.'; return; }
+    loadStats();
+  };
+
+  // ---- login ----
+  const doLogin = async () => {
+    const pin = $('#pin').value.trim();
+    const m = $('#login-msg'); m.textContent = '';
+    const r = await post('/api/admin/login', { pin });
+    const d = await r.json().catch(()=>({}));
+    if (!r.ok) { m.textContent = d.message || 'Incorrect code.'; $('#pin').select(); return; }
+    loadStats();
+  };
+  $('#login-go').onclick = doLogin;
+  $('#pin').addEventListener('keydown', e => { if (e.key==='Enter') doLogin(); });
+  $('#pin-confirm').addEventListener('keydown', e => { if (e.key==='Enter') $('#confirm-go').click(); });
+  ['#pin','#pin-confirm'].forEach(s => $(s).addEventListener('input', e => { e.target.value = e.target.value.replace(/\D/g,'').slice(0,6); }));
+
+  // ---- logout / refresh ----
+  $('#logoutbtn').onclick = async () => { await post('/api/admin/logout'); boot(); };
+  $('#refreshbtn').onclick = () => loadStats();
+
+  // ---- stats ----
+  const KINDS = ['skill','agent','command','mcp','plugin'];
+  async function loadStats() {
+    const r = await fetch('/api/admin/stats');
+    if (r.status === 401) return boot();
+    const d = await r.json().catch(()=>({}));
+    render(d);
+    show('s-stats');
+    $('#logoutbtn').classList.remove('hidden');
+    $('#refreshbtn').classList.remove('hidden');
+  }
+
+  function render(d) {
+    const copies = (d.byAction && d.byAction.copy) || 0;
+    const adds = (d.byAction && d.byAction.add) || 0;
+    // KPIs
+    $('#kpis').innerHTML = [
+      ['Total activity', d.total||0, 'copies + stack-adds'],
+      ['Plugins used', `${d.usedDistinct||0}`, `of ${d.catalogTotal||0} in catalog`],
+      ['Marketplace adds', d.marketplaceAdds||0, '“add marketplace” copied'],
+    ].map(([lab,val,sub]) => `<div class="card kpi"><div class="lab">${lab}</div><div class="val">${esc(val)}</div><div class="sub">${esc(sub)}</div></div>`).join('');
+
+    // hero
+    const top = (d.top && d.top[0]);
+    $('#hero').innerHTML = top
+      ? `<div class="hero"><span class="medal">🏆</span><div><div class="nm">${esc(top.name)}</div><span class="chip">${esc(top.kind)}</span></div><div class="ct"><b>${top.count}</b><span>uses</span></div></div>`
+      : `<div class="empty">No activity yet.</div>`;
+
+    // actions
+    const amax = Math.max(copies, adds, 1);
+    $('#actions').innerHTML =
+      bar('Copies', copies, amax) + bar('Stack-adds', adds, amax) || `<div class="empty">No activity yet.</div>`;
+
+    // by type
+    const bt = d.byType || {}, ck = d.catalogByKind || {};
+    const tmax = Math.max(1, ...KINDS.map(k => bt[k]||0));
+    $('#types').innerHTML = KINDS.map(k =>
+      barType(k, bt[k]||0, tmax, ck[k]||0)).join('');
+
+    // leaderboard
+    const list = d.top || [];
+    const lmax = list.length ? list[0].count : 1;
+    $('#lead').innerHTML = list.length
+      ? '<ol class="lead">' + list.map(x =>
+          `<li><span class="pnm">${esc(x.name)}</span><span class="chip">${esc(x.kind)}</span>`+
+          `<span class="lbar"><i style="width:${Math.round((x.count/lmax)*100)}%"></i></span>`+
+          `<span class="lct"><b>${x.count}</b></span></li>`).join('') + '</ol>'
+      : `<div class="empty">No activity yet — counts appear once people copy install commands or build a stack.</div>`;
+
+    // trend (last 14 days)
+    const days = lastDays(14);
+    const by = d.byDay || {};
+    const dmax = Math.max(1, ...days.map(dt => by[dt]||0));
+    $('#trend').innerHTML = '<div class="spark">' + days.map(dt => {
+      const v = by[dt]||0; const h = Math.round((v/dmax)*100);
+      const lbl = dt.slice(5);
+      return `<div class="d" style="height:${Math.max(3,h)}%" title="${dt}: ${v}"><i></i>${dt===days[0]||dt===days[days.length-1]?`<span>${lbl}</span>`:''}</div>`;
+    }).join('') + '</div>';
+  }
+
+  function bar(nm, v, max) {
+    return `<div class="bar"><span class="nm">${esc(nm)}</span><span class="track"><span class="fill" style="width:${Math.round((v/max)*100)}%"></span></span><span class="ct"><b>${v}</b></span></div>`;
+  }
+  function barType(nm, v, max, total) {
+    return `<div class="bar"><span class="nm">${esc(nm)}s</span><span class="track"><span class="fill" style="width:${Math.round((v/max)*100)}%"></span></span><span class="ct"><b>${v}</b> <span style="color:var(--faint)">/${total}</span></span></div>`;
+  }
+  function lastDays(n) {
+    const out = []; const now = new Date();
+    for (let i=n-1;i>=0;i--){ const d=new Date(now); d.setDate(now.getDate()-i); out.push(d.toISOString().slice(0,10)); }
+    return out;
+  }
+
+  boot();
+})();
+</script>
+</body>
+</html>

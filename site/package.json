@@ -1,0 +1,9 @@
+{
+  "name": "claude-marketplace-dashboard",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static marketplace dashboard + serverless usage analytics and admin panel.",
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}

@@ -450,6 +450,14 @@ const catalog = {
 };
 writeJson(path.join(REPO, 'site', 'catalog.json'), catalog);
 
+// server-side allowlist used by the usage-tracking API (keeps stats in sync with the catalog)
+const kindOfName = n => n.startsWith('agents-') ? 'agent' : n.startsWith('commands-') ? 'command' : n.startsWith('skills-') ? 'skill' : n.startsWith('mcps-') ? 'mcp' : 'plugin';
+const validPlugins = {};
+for (const p of catalog.plugins) if (p && p.name) validPlugins[p.name] = kindOfName(p.name);
+fs.mkdirSync(path.join(REPO, 'site', 'lib'), { recursive: true });
+fs.writeFileSync(path.join(REPO, 'site', 'lib', 'valid-plugins.json'), JSON.stringify(validPlugins) + '\n');
+console.log(`site/lib/valid-plugins.json written (${Object.keys(validPlugins).length} plugins)`);
+
 // inject into the dashboard template
 const templatePath = path.join(REPO, 'site', 'template.html');
 if (fs.existsSync(templatePath)) {

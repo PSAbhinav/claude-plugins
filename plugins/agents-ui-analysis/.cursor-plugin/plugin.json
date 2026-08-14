@@ -1,0 +1,9 @@
+{
+  "name": "agents-ui-analysis",
+  "description": "Agents — ui-analysis (5): screenshot-business-analyzer, screenshot-interaction-analyzer, screenshot-reviewer, screenshot-synthesizer, screenshot-ui-analyzer.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  }
+}

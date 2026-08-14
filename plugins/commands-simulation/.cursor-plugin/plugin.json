@@ -1,0 +1,10 @@
+{
+  "name": "commands-simulation",
+  "description": "Slash commands — simulation (10): business-scenario-explorer, constraint-modeler, decision-tree-explorer, digital-twin-creator, future-scenario-generator, ….",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "commands": "./commands/"
+}

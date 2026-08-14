@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "elevenlabs": {
+      "command": "uvx",
+      "args": [
+        "elevenlabs-mcp"
+      ],
+      "env": {
+        "ELEVENLABS_API_KEY": "<your-api-key>",
+        "ELEVENLABS_MCP_BASE_PATH": "~/Desktop",
+        "ELEVENLABS_MCP_OUTPUT_MODE": "files"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-web-data",
+  "version": "1.0.0",
+  "description": "Skills — web-data (6): bright-data-best-practices, bright-data-mcp, data-feeds, design-mirror, scrape, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "web-data"
+  ],
+  "skills": "./skills/"
+}

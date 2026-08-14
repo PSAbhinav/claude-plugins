@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "agents-podcast-creator-team",
+  "version": "1.0.0",
+  "description": "Agents — podcast-creator-team (11): academic-research-synthesizer, comprehensive-researcher, episode-orchestrator, guest-outreach-coordinator, market-research-analyst, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "agents",
+    "podcast-creator-team"
+  ]
+}

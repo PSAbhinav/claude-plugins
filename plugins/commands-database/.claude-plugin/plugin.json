@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "commands-database",
+  "version": "1.0.0",
+  "description": "Slash commands — database (9): snowflake-semanticview, supabase-backup-manager, supabase-data-explorer, supabase-migration-assistant, supabase-performance-optimizer, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "commands",
+    "database"
+  ],
+  "commands": "./commands/"
+}

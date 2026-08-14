@@ -1,0 +1,55 @@
+{
+  "mcpServers": {
+    "alpaca-trading": {
+      "command": "uvx",
+      "args": [
+        "alpaca-mcp-server"
+      ],
+      "env": {
+        "ALPACA_API_KEY": "<your-alpaca-api-key>",
+        "ALPACA_SECRET_KEY": "<your-alpaca-secret-key>"
+      }
+    },
+    "footballbin-predictions": {
+      "url": "https://ru7m5svay1.execute-api.eu-central-1.amazonaws.com/prod/mcp"
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "<YOUR_TOKEN>"
+      }
+    },
+    "memex": {
+      "type": "stdio",
+      "command": "npx",
+      "args": [
+        "-y",
+        "stifler-memex-mcp",
+        "serve",
+        "--repo",
+        "."
+      ]
+    },
+    "memory": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ]
+    },
+    "n8n-mcp": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "n8n-mcp"
+      ],
+      "env": {
+        "MCP_MODE": "stdio"
+      }
+    }
+  }
+}

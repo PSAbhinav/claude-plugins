@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-scientific",
+  "version": "1.0.0",
+  "description": "Skills — scientific (139): adaptyv, aeon, alphafold-database, anndata, arboreto, …. LARGE pack — enable only when needed.",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "scientific"
+  ],
+  "skills": "./skills/"
+}

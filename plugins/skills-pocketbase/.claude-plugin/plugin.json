@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-pocketbase",
+  "version": "1.0.0",
+  "description": "Skills — pocketbase (6): PocketBase API Rules, PocketBase Collections, PocketBase Deploy, PocketBase Hooks, PocketBase Migrations, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "pocketbase"
+  ],
+  "skills": "./skills/"
+}

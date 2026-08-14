@@ -1,0 +1,10 @@
+{
+  "name": "commands-design",
+  "description": "Slash commands — design (1): web-design-reviewer.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "commands": "./commands/"
+}

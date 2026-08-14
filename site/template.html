@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Marketplace</title>
+<meta name="description" content="Browse every plugin, skill, agent, command and MCP server in the abhi Claude Code marketplace.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23e0894f'/%3E%3Cstop offset='1' stop-color='%23c0512e'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='url(%23g)'/%3E%3Cpath d='M16 5.5 L18.3 13.7 L26.5 16 L18.3 18.3 L16 26.5 L13.7 18.3 L5.5 16 L13.7 13.7 Z' fill='white'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#faf9f5; --panel:#ffffff; --border:#e7e4db; --border2:#d8d4c8;
+    --text:#1f1e1b; --dim:#6f6d66; --faint:#a3a099;
+    --accent:#d97748; --accent2:#c05f31; --accent-soft:rgba(217,119,72,.10);
+    --green:#1a9c4b; --green-soft:rgba(26,156,75,.08);
+    --skill:#d97748; --agent:#3b82d9; --command:#b8860b; --mcp:#c2559f; --plugin:#7c5cd9; --ref:#7a8699;
+    --shadow:0 1px 2px rgba(30,25,15,.05);
+    --mono:'JetBrains Mono','IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --sbw:238px;
+    --maxw:min(1760px,96vw);   /* content width — uses most of the screen so the grid isn't cramped */
+    color-scheme:light;        /* native dropdown popup follows the theme */
+    /* ambient glow tints (light: whisper-soft) */
+    --amb1:rgba(217,119,72,.10); --amb2:rgba(124,92,217,.07); --amb3:rgba(43,182,196,.05);
+  }
+  [data-theme="dark"]{
+    /* neutral cool charcoal — soft near-black, no brown */
+    --bg:#101216; --panel:#191c22; --border:#2a2e37; --border2:#3b404b;
+    --text:#e9ebef; --dim:#9ba1ad; --faint:#646b77;
+    --accent:#e8945e; --accent2:#f0ad83; --accent-soft:rgba(232,148,94,.13);
+    --green:#4ade80; --green-soft:rgba(74,222,128,.10);
+    --shadow:none;
+    color-scheme:dark;
+    /* cool ambient — blue / violet / teal, zero brown */
+    --amb1:rgba(59,111,212,.16); --amb2:rgba(124,92,217,.15); --amb3:rgba(43,182,196,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scrollbar-color:var(--border2) var(--bg)}
+  body{background:var(--bg);color:var(--text);font-family:var(--mono);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  /* No page-wide color transitions: they force a full-page repaint every frame.
+     The circular View-Transition reveal (below) carries the theme change instead;
+     browsers without it just swap instantly (one paint). */
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  button{font-family:var(--mono);color:inherit}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+
+  /* circular theme reveal — the incoming theme wipes in from the toggle. Our clip
+     animation drives it (default crossfade off). Kept smooth by NOT stacking
+     page-wide color transitions on top (removed above) and by content-visibility
+     on cards (below), so only on-screen content is snapshot/painted. */
+  ::view-transition-group(root){animation-duration:.4s}
+  ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+  ::view-transition-new(root){z-index:9999}
+  ::view-transition-old(root){z-index:1}
+
+  /* ambient background — cheap GPU radial-gradients (no blur filter), gentle compositor drift */
+  .ambient{position:fixed;inset:-12%;z-index:0;pointer-events:none;will-change:transform;
+    background:
+      radial-gradient(38vmax 38vmax at 18% 12%, var(--amb1), transparent 62%),
+      radial-gradient(34vmax 34vmax at 84% 86%, var(--amb2), transparent 62%),
+      radial-gradient(28vmax 28vmax at 60% 44%, var(--amb3), transparent 62%);
+    animation:drift 40s ease-in-out infinite}
+  @keyframes drift{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(-2.5%,2.5%,0)}}
+
+  .app{display:flex;min-height:100vh;position:relative;z-index:1}
+
+  /* ---------- left sidebar ---------- */
+  aside{width:var(--sbw);flex-shrink:0;border-right:1px solid var(--border);background:var(--panel);
+    position:sticky;top:0;height:100vh;overflow-y:auto;overflow-x:hidden;padding:14px 12px;
+    display:flex;flex-direction:column;gap:4px;transition:width .18s ease}
+  .logo{display:flex;align-items:center;gap:11px;padding:6px 2px 16px;font-weight:700;font-size:17px;white-space:nowrap}
+  .logo .mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 8px rgba(192,81,46,.35)}
+  .logo .mark svg{width:21px;height:21px;fill:#fff}
+  .logo .word{overflow:hidden;display:flex;flex-direction:column;line-height:1.08;font-weight:400}
+  .logo .word b{font-size:16px;font-weight:700;letter-spacing:-.2px}
+  .logo .word small{font-size:10px;color:var(--faint);letter-spacing:2.5px;text-transform:uppercase}
+  #collapsebtn{margin-left:auto;background:none;border:1px solid var(--border);border-radius:8px;color:var(--dim);
+    width:28px;height:28px;line-height:1;cursor:pointer;font-size:15px;flex-shrink:0}
+  #collapsebtn:hover{color:var(--accent2);border-color:var(--accent)}
+  .side-label{color:var(--faint);font-size:11px;letter-spacing:1.6px;padding:15px 6px 6px;white-space:nowrap}
+  .side-item{display:flex;align-items:center;gap:12px;padding:10px 11px;border-radius:9px;color:var(--text);font-size:14.5px;cursor:pointer;border:1px solid transparent;background:none;width:100%;text-align:left;white-space:nowrap}
+  .side-item:hover{background:var(--accent-soft)}
+  .side-item.active{background:var(--accent-soft);border-color:var(--accent);color:var(--accent2)}
+  .side-item svg{width:18px;height:18px;flex-shrink:0;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;color:var(--dim)}
+  .side-item.active svg{color:var(--accent)}
+  .side-item .lbl{overflow:hidden;text-overflow:ellipsis}
+  .side-item .n{margin-left:auto;color:var(--dim);background:var(--bg);border:1px solid var(--border);border-radius:6px;font-size:12px;padding:1px 8px}
+  .side-item .reftag{margin-left:auto;font-size:9px;letter-spacing:.6px;text-transform:uppercase;color:var(--faint);border:1px solid var(--border);border-radius:5px;padding:1px 5px}
+  .side-item .reftag ~ .n{margin-left:6px}
+
+  /* bottom group: theme toggle + updated stamp, pinned to the sidebar floor */
+  .side-bottom{margin-top:auto;display:flex;flex-direction:column;gap:8px;padding-top:12px;border-top:1px solid var(--border)}
+  .themebtn{display:flex;align-items:center;gap:11px;width:100%;padding:10px 11px;border-radius:9px;border:1px solid var(--border);
+    background:var(--panel);color:var(--text);font-size:14px;cursor:pointer}
+  .themebtn:hover{border-color:var(--accent);background:var(--accent-soft)}
+  .tgl{position:relative;width:19px;height:19px;flex-shrink:0}
+  .tgl svg{position:absolute;inset:0;width:19px;height:19px;stroke:var(--accent2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;
+    transition:transform .5s cubic-bezier(.5,1.7,.4,1),opacity .45s ease}
+  .tgl .sun{opacity:1;transform:rotate(0) scale(1)}
+  .tgl .moon{opacity:0;transform:rotate(-80deg) scale(.4)}
+  [data-theme="dark"] .tgl .sun{opacity:0;transform:rotate(80deg) scale(.4)}
+  [data-theme="dark"] .tgl .moon{opacity:1;transform:rotate(0) scale(1)}
+  .side-foot{color:var(--faint);font-size:11.5px;padding:2px 6px;white-space:nowrap}
+
+  /* collapsed rail (desktop) — keep identical horizontal padding so every icon
+     stays on the exact same x-axis as the expanded state (no left/right jump) */
+  .app.rail aside{width:62px;padding:14px 12px}
+  .app.rail .logo{flex-direction:column;gap:10px;padding:6px 0 12px}
+  .app.rail .logo .word,.app.rail .side-label,.app.rail .side-item .lbl,.app.rail .side-item .n,.app.rail .side-item .reftag,.app.rail .side-foot,.app.rail .themebtn .tgl-label{display:none}
+  .app.rail #collapsebtn{margin:2px auto 0;order:99}
+  .app.rail .side-item{justify-content:flex-start;padding:10px 11px}
+  .app.rail .themebtn{justify-content:flex-start;padding:10px 11px}
+
+  /* ---------- main ---------- */
+  .main{flex:1;min-width:0}
+  .topbar{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:12px;padding:10px 22px;
+    background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)}
+  .searchwrap{position:relative;flex:1;max-width:430px}
+  .searchwrap .gt{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--accent);font-weight:700}
+  #search{width:100%;background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:8px 58px 8px 28px;
+    font-family:var(--mono);font-size:13px;color:var(--text);outline:none}
+  #search:focus{border-color:var(--accent)}
+  .kbd{position:absolute;right:9px;top:50%;transform:translateY(-50%);color:var(--faint);font-size:11px;border:1px solid var(--border);border-radius:5px;padding:1px 6px;background:var(--bg)}
+  .topbtn{display:inline-flex;align-items:center;gap:7px;background:var(--panel);border:1px solid var(--border);color:var(--text);
+    border-radius:9px;padding:7px 13px;font-size:12.5px;cursor:pointer}
+  .topbtn:first-of-type{margin-left:auto}
+  .topbtn:hover{border-color:var(--border2)}
+
+  /* hero */
+  .hero{text-align:center;padding:52px 20px 8px}
+  .wordmark{display:inline-flex;align-items:center;gap:16px;font-weight:800;letter-spacing:-1px;
+    font-size:clamp(30px,5.2vw,50px);line-height:1}
+  .wordmark .wm-mark{width:clamp(38px,5vw,54px);height:clamp(38px,5vw,54px);border-radius:14px;flex-shrink:0;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;
+    box-shadow:0 6px 20px rgba(192,81,46,.32)}
+  .wordmark .wm-mark svg{width:58%;height:58%;fill:#fff}
+  .wordmark .wm-accent{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .tagline{color:var(--dim);font-size:13px;margin-top:16px}
+  .tagline .dot{color:var(--green)}
+
+  /* featured */
+  .featured{max-width:var(--maxw);margin:26px auto 0;padding:0 22px}
+  .featured .head{display:flex;align-items:center;gap:8px;font-size:12px;letter-spacing:1.2px;font-weight:700}
+  .featured .head .star{color:var(--accent)}
+  .feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:12px}
+  .feat{display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--border);border-radius:11px;padding:14px 16px;cursor:pointer;box-shadow:var(--shadow)}
+  .feat:hover{border-color:var(--accent)}
+  .feat .fic{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .feat b{font-size:13.5px}
+  .feat .cat{font-size:11px;color:var(--dim);border:1px solid var(--border);border-radius:6px;padding:0 7px;margin-left:7px}
+  .feat p{color:var(--dim);font-size:12px;margin-top:2px}
+
+  /* controls row */
+  .controls{max-width:var(--maxw);margin:26px auto 0;padding:0 22px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  /* dropdowns styled to match the app: no native chrome, custom chevron, themed popup */
+  select{appearance:none;-webkit-appearance:none;-moz-appearance:none;
+    background:var(--panel) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23948f85' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center;
+    background-size:13px;border:1px solid var(--border);color:var(--text);border-radius:9px;
+    padding:8px 32px 8px 12px;font-family:var(--mono);font-size:12.5px;line-height:1.4;height:36px;outline:none;cursor:pointer;max-width:260px}
+  select:hover{border-color:var(--border2)}
+  select:focus{border-color:var(--accent)}
+  select option{background:var(--panel);color:var(--text)}
+  .viewtg{display:flex;border:1px solid var(--border);border-radius:9px;overflow:hidden}
+  .viewtg button{background:var(--panel);border:none;color:var(--dim);padding:8px 11px;cursor:pointer;font-size:12px}
+  .viewtg button.active{background:var(--accent-soft);color:var(--accent2)}
+  .countline{max-width:var(--maxw);margin:16px auto 0;padding:0 22px;display:flex;align-items:center;gap:12px;font-size:13px;flex-wrap:wrap;scroll-margin-top:64px}
+  .countline b{font-size:14px}
+  .countline .note{color:var(--faint);font-size:11.5px}
+
+  /* grid */
+  .wrap{max-width:var(--maxw);margin:14px auto;padding:0 22px 30px}
+  .grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+  @media (max-width:1500px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+  @media (max-width:1150px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+  @media (max-width:820px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+  @media (max-width:560px){.grid{grid-template-columns:1fr}}
+  .grid.list{grid-template-columns:1fr!important}
+  /* content-visibility: skip render/paint/snapshot for off-screen cards — keeps the
+     theme View-Transition and style recalc bounded to what's actually visible */
+  .card{position:relative;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;cursor:pointer;box-shadow:var(--shadow);transition:border-color .12s,transform .12s;
+    content-visibility:auto;contain-intrinsic-size:auto 158px}
+  .card:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .grid.list .card{flex-direction:row;align-items:center;gap:14px}
+  .grid.list .card .desc{flex:1;-webkit-line-clamp:1}
+  .card .ic{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+  .ic svg,.fic svg{width:17px;height:17px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+  .card h3{font-size:14px;font-weight:700;word-break:break-word}
+  .card .desc{color:var(--dim);font-size:12.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .card .foot{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-top:auto}
+  .chip{border:1px solid var(--border);border-radius:6px;padding:1px 8px;font-size:11px;color:var(--dim);white-space:nowrap}
+  .badge-green{display:inline-flex;align-items:center;gap:4px;background:var(--green-soft);border:1px solid color-mix(in srgb,var(--green) 40%,transparent);color:var(--green);border-radius:6px;padding:1px 8px;font-size:11px;font-weight:600}
+  .qa{position:absolute;top:10px;right:10px;display:none;gap:5px}
+  .card:hover .qa,.card:focus-within .qa{display:flex}
+  .qa button{background:var(--panel);border:1px solid var(--border);color:var(--dim);border-radius:7px;padding:2px 9px;font-size:11px;cursor:pointer}
+  .qa button:hover{color:var(--accent2);border-color:var(--accent)}
+  .pager{display:none;justify-content:center;align-items:center;gap:6px;flex-wrap:wrap;margin:28px auto 6px}
+  .pg{background:var(--panel);border:1px solid var(--border);color:var(--text);border-radius:8px;min-width:36px;padding:8px 11px;font-family:var(--mono);font-size:13px;cursor:pointer}
+  .pg:hover:not(:disabled){border-color:var(--accent)}
+  .pg.active{background:var(--accent-soft);border-color:var(--accent);color:var(--accent2);font-weight:700}
+  .pg:disabled{opacity:.4;cursor:not-allowed}
+  .pg.nav{color:var(--dim)}
+  .pg-gap{color:var(--faint);padding:0 3px}
+  .empty{color:var(--dim);text-align:center;padding:70px 0}
+
+  /* stack pill + modal */
+  #stackpill{position:fixed;right:20px;bottom:20px;z-index:40;display:none;align-items:center;gap:9px;
+    background:var(--text);color:var(--bg);border:none;border-radius:999px;padding:11px 18px;font-size:13px;font-weight:700;cursor:pointer;
+    box-shadow:0 8px 24px rgba(20,15,5,.25)}
+  #stackpill .num{background:var(--accent);color:#fff;border-radius:999px;padding:0 8px;font-size:12px}
+  .stackrow{display:flex;align-items:center;gap:9px;padding:7px 0;border-bottom:1px dashed var(--border);font-size:12.5px}
+  .stackrow .rm{margin-left:auto;background:none;border:none;color:var(--faint);cursor:pointer;font-size:14px}
+  .stackrow .rm:hover{color:var(--accent2)}
+
+  /* modal */
+  .overlay{position:fixed;inset:0;background:rgba(20,16,10,.45);backdrop-filter:blur(3px);z-index:60;display:none;align-items:flex-start;justify-content:center;padding:6vh 16px;overflow-y:auto}
+  .overlay.open{display:flex}
+  .modal{background:var(--panel);border:1px solid var(--border);border-radius:14px;max-width:720px;width:100%;padding:24px;box-shadow:0 20px 60px rgba(20,15,5,.25)}
+  .modal .mhead{display:flex;align-items:center;gap:12px}
+  .modal h2{font-size:17px;word-break:break-word;flex:1}
+  .close{background:none;border:none;color:var(--dim);font-size:20px;cursor:pointer}
+  .modal .desc{color:var(--dim);font-size:13px;margin:12px 0}
+  .kv{display:grid;grid-template-columns:140px 1fr;gap:5px 14px;font-size:12.5px;margin:12px 0;border-top:1px dashed var(--border);padding-top:12px}
+  .kv dt{color:var(--faint)}
+  .kv dd{word-break:break-word}
+  .label{color:var(--faint);font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;margin-top:14px}
+  .codebox{position:relative;margin:7px 0}
+  .codebox pre{background:var(--bg);border:1px solid var(--border);border-radius:9px;padding:11px 84px 11px 13px;font-size:12px;color:var(--accent2);overflow-x:auto;white-space:pre-wrap;word-break:break-all}
+  .codebox pre.json{color:var(--text);max-height:300px;overflow-y:auto}
+  .copy{position:absolute;top:7px;right:7px;background:var(--panel);border:1px solid var(--border);color:var(--dim);border-radius:7px;padding:3px 10px;font-size:11px;cursor:pointer}
+  .copy:hover{color:var(--accent2);border-color:var(--accent)}
+  .mbtn{background:var(--accent-soft);border:1px solid var(--accent);color:var(--accent2);border-radius:8px;padding:6px 14px;font-size:12px;cursor:pointer;margin-top:12px}
+
+  footer{border-top:1px solid var(--border);color:var(--faint);text-align:center;font-size:12px;padding:24px 20px}
+
+  .menu-btn{display:none;background:var(--panel);border:1px solid var(--border);border-radius:9px;padding:7px 11px;cursor:pointer;color:var(--text)}
+  #scrim{display:none;position:fixed;inset:0;background:rgba(20,16,10,.35);z-index:45}
+  @media (max-width:900px){
+    aside{position:fixed;left:calc(-1 * var(--sbw) - 10px);transition:left .2s;z-index:50}
+    aside.open{left:0}
+    #scrim.on{display:block}
+    .menu-btn{display:inline-flex}
+    #collapsebtn{display:none}
+    .app.rail aside{width:var(--sbw);padding:14px 12px}
+    .app.rail .logo .word,.app.rail .side-label,.app.rail .side-item .lbl,.app.rail .side-item .n,.app.rail .side-item .reftag,.app.rail .side-foot,.app.rail .themebtn .tgl-label{display:initial}
+    .app.rail .side-item{justify-content:flex-start;padding:10px 11px}
+    .app.rail .themebtn{justify-content:flex-start;padding:10px 11px}
+    .app.rail .logo{flex-direction:row}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none!important;animation:none!important}
+  }
+</style>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+<div class="app" id="app">
+
+<aside id="sidebar">
+  <div class="logo">
+    <span class="mark"><svg viewBox="0 0 32 32"><path d="M16 4 L18.7 13.3 L28 16 L18.7 18.7 L16 28 L13.3 18.7 L4 16 L13.3 13.3 Z"/></svg></span><span class="word"><b>Claude</b><small>Marketplace</small></span>
+    <button id="collapsebtn" title="Collapse sidebar" aria-label="Collapse sidebar">«</button>
+  </div>
+  <div class="side-label">BROWSE</div>
+  <nav id="sidenav"></nav>
+  <div class="side-label">RESOURCES</div>
+  <a class="side-item" href="https://github.com/PSAbhinav/claude-plugins" target="_blank" rel="noopener" title="GitHub repo">
+    <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+    <span class="lbl">GitHub repo</span></a>
+  <div class="side-bottom">
+    <button class="themebtn" id="themebtn" title="Toggle light / dark theme" aria-label="Toggle theme">
+      <span class="tgl">
+        <svg class="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+        <svg class="moon" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </span>
+      <span class="tgl-label">Dark mode</span>
+    </button>
+  </div>
+</aside>
+<div id="scrim"></div>
+
+<div class="main">
+  <div class="topbar">
+    <button class="menu-btn" id="menubtn" aria-label="Open sidebar">≡</button>
+    <div class="searchwrap">
+      <span class="gt">&gt;</span>
+      <input id="search" type="search" placeholder="Search components..." autocomplete="off">
+      <span class="kbd">Ctrl K</span>
+    </div>
+    <button class="topbtn" data-copy="/plugin marketplace add PSAbhinav/claude-plugins">+ add marketplace</button>
+  </div>
+
+  <div class="hero">
+    <div class="wordmark">
+      <span class="wm-mark"><svg viewBox="0 0 32 32"><path d="M16 4 L18.7 13.3 L28 16 L18.7 18.7 L16 28 L13.3 18.7 L4 16 L13.3 13.3 Z"/></svg></span>
+      <span>Claude <span class="wm-accent">Marketplace</span></span>
+    </div>
+    <div class="tagline"><span class="dot">●</span> <span id="subtitle">Ready-to-use plugins, skills, agents &amp; MCPs for Claude Code</span></div>
+  </div>
+
+  <div class="featured">
+    <div class="head"><span class="star">★</span> FEATURED PACKS</div>
+    <div class="feat-grid" id="featured"></div>
+  </div>
+
+  <div class="controls">
+    <select id="catsel" aria-label="Category filter"><option value="">All categories</option></select>
+    <select id="sortsel" aria-label="Sort order">
+      <option value="rank">Sort: Best match</option>
+      <option value="name">Sort: Name A–Z</option>
+      <option value="size">Sort: Largest packs</option>
+    </select>
+    <div class="viewtg">
+      <button id="vgrid" class="active" title="Grid view" aria-label="Grid view">▦</button>
+      <button id="vlist" title="List view" aria-label="List view">☰</button>
+    </div>
+  </div>
+
+  <div class="countline"><b id="count"></b><span id="crumb" style="color:var(--dim)"></span>
+    <span class="note">generated strictly from the marketplace</span></div>
+
+  <div class="wrap">
+    <div class="grid" id="grid"></div>
+    <div class="empty" id="empty" style="display:none">no matches — try another search or filter</div>
+    <div class="pager" id="pager"></div>
+  </div>
+
+  <footer id="footer"></footer>
+</div>
+</div>
+
+<button id="stackpill" aria-label="Open install stack">▣ stack <span class="num" id="stacknum">0</span></button>
+<div class="overlay" id="overlay"><div class="modal" id="modal"></div></div>
+
+<script id="catalog-data" type="application/json">__CATALOG_JSON__</script>
+<script>
+(async function(){
+  let CAT;
+  try { CAT = JSON.parse(document.getElementById('catalog-data').textContent); }
+  catch { CAT = await (await fetch('catalog.json')).json(); }
+
+  const MKT = CAT.marketplace || 'abhi';
+  const esc = s => String(s??'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const installCmd = p => `/plugin install ${p}@${MKT}`;
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const store = { get(k,d){ try{ return JSON.parse(localStorage.getItem(k)) ?? d; }catch{ return d; } },
+                  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch{} } };
+
+  // ---------- flatten catalog ----------
+  const items = [];
+  const packCat = name => { const m = name.match(/^(?:agents|commands|skills|mcps)-(.+)$/); return m ? m[1] : null; };
+  const compCount = p => { const c = p.components || {}; return (c.skills?.length||0)+(c.agents?.length||0)+(c.commands?.length||0)+(c.mcps?.length||0); };
+  for (const p of CAT.plugins) {
+    items.push({ kind:'plugin', name:p.name, description:p.description, category:p.category||'first-party',
+      plugin:p.name, vendored:p.vendored, sourceInfo:p.sourceInfo, homepage:p.homepage, author:p.author, version:p.version, size:compCount(p) });
+    const cat = packCat(p.name) || p.name;
+    const c = p.components || {};
+    for (const s of c.skills||[])   items.push({ kind:'skill',   name:s.name, description:s.description, category:cat, plugin:p.name });
+    for (const a of c.agents||[])   items.push({ kind:'agent',   name:a.name, description:a.description, category:cat, plugin:p.name, model:a.model });
+    for (const m of c.commands||[]) items.push({ kind:'command', name:m.name, description:m.description, category:cat, plugin:p.name, invoke:m.invoke });
+    for (const m of c.mcps||[])     items.push({ kind:'mcp',     name:m.name, description:m.description, category:cat, plugin:p.name, envKeys:m.envKeys, config:m.config });
+  }
+  const refKinds = { hooks:'hook', settings:'setting', loops:'loop', sandbox:'sandbox' };
+  for (const [type, list] of Object.entries(CAT.references||{}))
+    for (const r of list) items.push({ kind:refKinds[type]||type, ref:true, name:r.name, description:r.description, category:r.category, path:r.path });
+  const key = i => `${i.kind}|${i.plugin||''}|${i.name}`;
+  const byKey = new Map(items.map(i => [key(i), i]));
+
+  // ---------- icons ----------
+  const ICONS = {
+    all:'<path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/>',
+    plugin:'<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/>',
+    skill:'<path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>',
+    agent:'<rect x="5" y="7" width="14" height="12" rx="2"/><path d="M12 3v4M8 12h.01M16 12h.01M9 16h6"/>',
+    command:'<path d="m4 17 6-6-6-6M12 19h8"/>',
+    mcp:'<path d="M12 22v-5M9 8V2M15 8V2M6 8h12v5a6 6 0 0 1-12 0V8z"/>',
+    hook:'<path d="M18 8a6 6 0 0 1-6 6 6 6 0 0 1-6-6 6 6 0 0 1 6-6c1 0 2 .2 2.8.7M12 14v8"/>',
+    setting:'<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+    loop:'<path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/>',
+    sandbox:'<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>',
+  };
+  const COLORS = { plugin:'var(--plugin)', skill:'var(--skill)', agent:'var(--agent)', command:'var(--command)', mcp:'var(--mcp)', hook:'var(--ref)', setting:'var(--ref)', loop:'var(--ref)', sandbox:'var(--ref)' };
+  const icon = (k, cls='ic') => `<span class="${cls}" style="background:${COLORS[k]||'var(--ref)'}"><svg viewBox="0 0 24 24">${ICONS[k]||ICONS.sandbox}</svg></span>`;
+
+  // ---------- sidebar ----------
+  const count = k => items.filter(i => i.kind===k).length;
+  // 4th field = reference-only (shown as a compact "ref" tag, not inline text that overflows)
+  const NAV = [
+    ['all','All', items.length], ['skill','Skills', count('skill')], ['agent','Agents', count('agent')],
+    ['command','Commands', count('command')], ['mcp','MCPs', count('mcp')], ['plugin','Plugins', count('plugin')],
+    ['hook','Hooks', count('hook'),1], ['setting','Settings', count('setting'),1],
+    ['loop','Loops', count('loop'),1], ['sandbox','Sandbox', count('sandbox'),1],
+  ].filter(n => n[2] > 0);
+  document.getElementById('sidenav').innerHTML = NAV.map(([k,l,n,ref]) =>
+    `<button class="side-item" data-tab="${k}" title="${esc(l)}${ref?' (reference)':''}"><svg viewBox="0 0 24 24">${ICONS[k]||ICONS.all}</svg><span class="lbl">${esc(l)}</span>${ref?'<span class="reftag">ref</span>':''}<span class="n">${n}</span></button>`).join('');
+  document.getElementById('footer').innerHTML =
+    `Built by <a href="https://github.com/PSAbhinav" target="_blank" rel="noopener">P&nbsp;S&nbsp;Abhinav&nbsp;Krishna</a>`;
+
+  // ---------- featured: 3 largest vendored packs ----------
+  const featured = items.filter(i => i.kind==='plugin' && i.size>0).sort((a,b)=>b.size-a.size).slice(0,3);
+  document.getElementById('featured').innerHTML = featured.map(f =>
+    `<div class="feat" data-name="${esc(f.name)}">${icon('plugin','fic')}<div><b>${esc(f.name)}</b><span class="cat">${esc(f.category)}</span><p>${f.size} components</p></div></div>`).join('');
+
+  // ---------- state (deep-linkable via location.hash) ----------
+  let tab='all', cat='', q='', sort='rank', page=0, current=[];
+  const PER=25;   // never more than 25 cards on a page
+  (function restore(){
+    const h = new URLSearchParams(location.hash.slice(1));
+    if (h.get('t')) tab = h.get('t');
+    if (h.get('c')) cat = h.get('c');
+    if (h.get('q')) q = h.get('q');
+    document.getElementById('search').value = q;
+  })();
+  function syncHash(){
+    const h = new URLSearchParams();
+    if (tab!=='all') h.set('t',tab); if (cat) h.set('c',cat); if (q) h.set('q',q);
+    history.replaceState(null,'', h.toString() ? '#'+h.toString() : location.pathname);
+  }
+
+  function refreshCats(){
+    const pool = items.filter(i => tab==='all' || i.kind===tab);
+    const m = new Map();
+    for (const i of pool) if (i.category) m.set(i.category,(m.get(i.category)||0)+1);
+    const opts = [...m.entries()].sort((a,b)=>b[1]-a[1]);
+    if (cat && !m.has(cat)) cat='';
+    document.getElementById('catsel').innerHTML = '<option value="">All categories</option>' +
+      opts.map(([c,n])=>`<option value="${esc(c)}"${c===cat?' selected':''}>${esc(c)} (${n})</option>`).join('');
+  }
+  // multi-word AND search; rank: name hits before description hits
+  function filtered(){
+    const words = q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    let r = items.filter(i => (tab==='all' || i.kind===tab) && (!cat || i.category===cat));
+    if (words.length) {
+      r = r.map(i => {
+        const name=(i.name||'').toLowerCase(), rest=((i.description||'')+' '+(i.plugin||'')+' '+(i.category||'')).toLowerCase();
+        let score=0;
+        for (const w of words) {
+          if (name.includes(w)) score += name.startsWith(w) ? 3 : 2;
+          else if (rest.includes(w)) score += 1;
+          else return null;
+        }
+        return {i, score};
+      }).filter(Boolean).sort((a,b)=>b.score-a.score || a.i.name.localeCompare(b.i.name)).map(x=>x.i);
+      if (sort==='rank') return r;
+    }
+    return r.slice().sort(sort==='size'
+      ? (a,b)=>(b.size||0)-(a.size||0) || a.name.localeCompare(b.name)
+      : (a,b)=>a.name.localeCompare(b.name));
+  }
+  function card(i,idx){
+    const foot=[`<span class="chip">${esc(i.category||'')}</span>`];
+    if(i.kind==='plugin') foot.push(i.vendored
+      ? `<span class="badge-green">▣ ${i.size} components</span>`
+      : `<span class="chip">installs from upstream</span>`);
+    if(i.plugin && i.kind!=='plugin' && i.plugin!==i.category) foot.push(`<span class="chip">${esc(i.plugin)}</span>`);
+    if(i.invoke) foot.push(`<span class="chip">${esc(i.invoke)}</span>`);
+    if(i.envKeys?.length) foot.push(`<span class="chip">env ${i.envKeys.length}</span>`);
+    if(i.ref) foot.push('<span class="chip">reference</span>');
+    const qa = i.ref ? '' :
+      `<div class="qa"><button data-stack="${esc(key(i))}" title="Add to install stack">+ stack</button>` +
+      `<button data-copy="${esc(installCmd(i.plugin))}" title="Copy install command">copy</button></div>`;
+    return `<div class="card" data-idx="${idx}">${qa}
+      <div style="display:flex;gap:11px;align-items:center">${icon(i.kind)}<h3>${esc(i.name)}</h3></div>
+      <div class="desc">${esc(i.description||'')}</div>
+      <div class="foot">${foot.join('')}</div></div>`;
+  }
+  // compact page-number window with ellipses: first, last, current±1
+  function pageWindow(cur,total){
+    const keep=[...new Set([0,total-1,cur-1,cur,cur+1])].filter(p=>p>=0&&p<total).sort((a,b)=>a-b);
+    const out=[]; let prev=-1;
+    for(const p of keep){ if(p-prev>1) out.push(-1); out.push(p); prev=p; }
+    return out; // -1 = ellipsis
+  }
+  function render(resetPage=true){
+    if(resetPage) page=0;
+    current=filtered();
+    const total=Math.max(1, Math.ceil(current.length/PER));
+    page=Math.min(Math.max(0,page), total-1);
+    const start=page*PER;
+    document.getElementById('grid').innerHTML =
+      current.slice(start,start+PER).map((it,x)=>card(it,start+x)).join('');
+    document.getElementById('empty').style.display = current.length?'none':'block';
+    const pager=document.getElementById('pager');
+    if(current.length<=PER){ pager.style.display='none'; pager.innerHTML=''; }
+    else {
+      pager.style.display='flex';
+      const nums=pageWindow(page,total).map(p => p<0
+        ? `<span class="pg-gap">…</span>`
+        : `<button class="pg${p===page?' active':''}" data-page="${p}">${p+1}</button>`).join('');
+      pager.innerHTML =
+        `<button class="pg nav" data-page="${page-1}"${page===0?' disabled':''}>‹ Prev</button>`+
+        nums+
+        `<button class="pg nav" data-page="${page+1}"${page===total-1?' disabled':''}>Next ›</button>`;
+    }
+    document.getElementById('count').textContent = `${current.length} component${current.length===1?'':'s'}`;
+    document.getElementById('crumb').textContent =
+      (tab!=='all'?` / ${tab}`:'') + (cat?` / ${cat}`:'') + (q?` / "${q}"`:'') +
+      (current.length>PER?` · page ${page+1} of ${total}`:'');
+    document.querySelectorAll('.side-item[data-tab]').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+    syncHash();
+  }
+
+  // ---------- install stack ----------
+  let stack = store.get('abhi-stack', []).filter(k => byKey.has(k));
+  const pill=document.getElementById('stackpill');
+  function renderPill(){
+    document.getElementById('stacknum').textContent = stack.length;
+    pill.style.display = stack.length ? 'inline-flex' : 'none';
+    store.set('abhi-stack', stack);
+  }
+  function addToStack(k){
+    if(!stack.includes(k)) stack.push(k);
+    renderPill();
+  }
+  function openStack(){
+    const its = stack.map(k=>byKey.get(k)).filter(Boolean);
+    const plugins = [...new Set(its.map(i=>i.plugin))];
+    const cmds = plugins.map(installCmd).join('\n');
+    modal.innerHTML = `<div class="mhead">${icon('plugin')}<h2>Install stack</h2><button class="close">×</button></div>
+      <div class="desc">${its.length} component${its.length===1?'':'s'} across ${plugins.length} plugin${plugins.length===1?'':'s'}. Commands are deduped per plugin.</div>
+      <div>${its.map(i=>`<div class="stackrow">${icon(i.kind)}<span>${esc(i.name)}</span><span class="chip">${esc(i.plugin)}</span>
+        <button class="rm" data-unstack="${esc(key(i))}" title="Remove from stack">×</button></div>`).join('')}</div>
+      <div class="label">Run in Claude Code</div>
+      <div class="codebox"><pre>${esc(cmds)}</pre><button class="copy" data-copy="${esc(cmds)}">copy all</button></div>
+      <button class="mbtn" id="clearstack">clear stack</button>`;
+    overlay.classList.add('open');
+  }
+
+  // ---------- modal ----------
+  const overlay=document.getElementById('overlay'), modal=document.getElementById('modal');
+  const codebox=(code,json)=>`<div class="codebox"><pre class="${json?'json':''}">${esc(code)}</pre><button class="copy" data-copy="${esc(code)}">copy</button></div>`;
+  function openModal(i){
+    const rows=[['Type', i.kind + (i.ref?' (reference — not plugin-installable)':'')]];
+    if(i.category) rows.push(['Category', i.category]);
+    if(i.plugin && i.kind!=='plugin') rows.push(['Plugin', i.plugin]);
+    if(i.version) rows.push(['Version', i.version]);
+    if(i.author) rows.push(['Author', i.author]);
+    if(i.model) rows.push(['Subagent model', i.model]);
+    if(i.sourceInfo) rows.push(['Source', i.sourceInfo]);
+    if(i.envKeys?.length) rows.push(['Env keys', i.envKeys.join(', ')]);
+    if(i.path) rows.push(['Repo path', i.path]);
+    let html = `<div class="mhead">${icon(i.kind)}<h2>${esc(i.name)}</h2><button class="close">×</button></div>
+      <div class="desc">${esc(i.description||'')}</div>
+      <dl class="kv">${rows.map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>`;
+    if(!i.ref){
+      html += `<div class="label">Install${i.kind!=='plugin'?' (via its plugin)':''}</div>` + codebox(installCmd(i.plugin));
+      if(i.invoke) html += `<div class="label">Invoke</div>` + codebox(i.invoke);
+      if(i.config) html += `<div class="label">Standalone MCP config (.mcp.json)</div>` + codebox(JSON.stringify(i.config,null,2),true);
+      if(i.homepage) html += `<div class="label">Homepage</div><div style="font-size:13px"><a href="${esc(i.homepage)}" target="_blank" rel="noopener">${esc(i.homepage)}</a></div>`;
+      html += `<button class="mbtn" data-stack="${esc(key(i))}">+ add to install stack</button>`;
+    } else {
+      html += `<div class="label">Reference material</div>
+        <div class="desc">Vendored for browsing; apply manually. Hooks/settings run automatically when enabled, so they are not exposed as installable plugins.</div>` +
+        codebox(`https://github.com/PSAbhinav/claude-plugins/blob/main/${i.path}`);
+    }
+    modal.innerHTML=html; overlay.classList.add('open');
+  }
+  overlay.addEventListener('click', e => { if(e.target===overlay || e.target.classList.contains('close')) overlay.classList.remove('open'); });
+  document.addEventListener('keydown', e => {
+    if(e.key==='Escape') overlay.classList.remove('open');
+    if(((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k') || (e.key==='/' && !/INPUT|SELECT|TEXTAREA/.test(document.activeElement.tagName))){
+      e.preventDefault(); document.getElementById('search').focus();
+    }
+  });
+
+  // ---------- events ----------
+  document.body.addEventListener('click', e => {
+    const copy=e.target.closest('[data-copy]');
+    if(copy){ navigator.clipboard.writeText(copy.dataset.copy); const t=copy.textContent; copy.textContent='copied ✓'; setTimeout(()=>copy.textContent=t,900); return; }
+    const st=e.target.closest('[data-stack]');
+    if(st){ addToStack(st.dataset.stack); const t=st.textContent; st.textContent='added ✓'; setTimeout(()=>st.textContent=t,900); return; }
+    const un=e.target.closest('[data-unstack]');
+    if(un){ stack = stack.filter(k=>k!==un.dataset.unstack); renderPill(); stack.length ? openStack() : overlay.classList.remove('open'); return; }
+    if(e.target.id==='clearstack'){ stack=[]; renderPill(); overlay.classList.remove('open'); return; }
+    const pg=e.target.closest('[data-page]');
+    if(pg && !pg.disabled){ page=+pg.dataset.page; render(false); document.querySelector('.countline').scrollIntoView({behavior:'smooth',block:'start'}); return; }
+    const tabBtn=e.target.closest('[data-tab]');
+    if(tabBtn){ tab=tabBtn.dataset.tab; cat=''; refreshCats(); render(); closeMobile(); return; }
+    const feat=e.target.closest('.feat');
+    if(feat){ const it=items.find(x=>x.kind==='plugin'&&x.name===feat.dataset.name); if(it) openModal(it); return; }
+    const cardEl=e.target.closest('.card');
+    if(cardEl) openModal(current[+cardEl.dataset.idx]);
+  });
+  pill.addEventListener('click', openStack);
+  document.getElementById('search').addEventListener('input', e => { q=e.target.value; render(); });
+  document.getElementById('catsel').addEventListener('change', e => { cat=e.target.value; render(); });
+  document.getElementById('sortsel').addEventListener('change', e => { sort=e.target.value; render(); });
+  document.getElementById('vgrid').addEventListener('click', () => { document.getElementById('grid').classList.remove('list'); vg(true); });
+  document.getElementById('vlist').addEventListener('click', () => { document.getElementById('grid').classList.add('list'); vg(false); });
+  const vg = g => { document.getElementById('vgrid').classList.toggle('active',g); document.getElementById('vlist').classList.toggle('active',!g); };
+
+  // ---------- sidebar collapse (desktop rail) + mobile off-canvas ----------
+  const app=document.getElementById('app'), sidebar=document.getElementById('sidebar'),
+        scrim=document.getElementById('scrim'), collapsebtn=document.getElementById('collapsebtn');
+  function setRail(on){
+    app.classList.toggle('rail', on);
+    collapsebtn.textContent = on ? '»' : '«';
+    collapsebtn.title = collapsebtn.ariaLabel = on ? 'Expand sidebar' : 'Collapse sidebar';
+    store.set('abhi-rail', on);
+  }
+  collapsebtn.addEventListener('click', () => setRail(!app.classList.contains('rail')));
+  setRail(!!store.get('abhi-rail', false));
+  const closeMobile = () => { sidebar.classList.remove('open'); scrim.classList.remove('on'); };
+  document.getElementById('menubtn').addEventListener('click', () => {
+    sidebar.classList.toggle('open'); scrim.classList.toggle('on', sidebar.classList.contains('open'));
+  });
+  scrim.addEventListener('click', closeMobile);
+
+  // theme — instant swap (one cheap recalc) + a compositor-only ripple from the toggle
+  const themebtn=document.getElementById('themebtn'), themelabel=themebtn.querySelector('.tgl-label');
+  function applyTheme(t){
+    document.documentElement.dataset.theme=t;
+    themelabel.textContent = t==='dark' ? 'Light mode' : 'Dark mode';
+    store.set('abhi-theme',t);
+  }
+  function toggleTheme(){
+    const next = document.documentElement.dataset.theme==='dark' ? 'light' : 'dark';
+    if(!document.startViewTransition || reduced){ applyTheme(next); return; }
+    const r = themebtn.getBoundingClientRect();
+    const x = r.left + r.width/2, y = r.top + r.height/2;
+    const end = Math.hypot(Math.max(x, innerWidth-x), Math.max(y, innerHeight-y));
+    const vt = document.startViewTransition(() => applyTheme(next));
+    vt.ready.then(() => document.documentElement.animate(
+      { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${end}px at ${x}px ${y}px)`] },
+      { duration: 400, easing: 'cubic-bezier(.35,0,.15,1)', pseudoElement: '::view-transition-new(root)' }
+    ));
+  }
+  themebtn.addEventListener('click', toggleTheme);
+  applyTheme(store.get('abhi-theme','light'));
+
+  renderPill(); refreshCats(); render();
+})();
+</script>
+</body>
+</html>

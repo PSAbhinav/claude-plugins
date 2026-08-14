@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-media",
+  "version": "1.0.0",
+  "description": "Skills — media (5): image-enhancer, screenshot, speech, transcribe, video-downloader.",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "media"
+  ],
+  "skills": "./skills/"
+}

@@ -1,0 +1,9 @@
+{
+  "name": "agents-ai-specialists",
+  "description": "Agents — ai-specialists (8): ai-ethics-advisor, hackathon-ai-strategist, llm-architect, llms-maintainer, model-evaluator, ….",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "commands-simulation",
+  "version": "1.0.0",
+  "description": "Slash commands — simulation (10): business-scenario-explorer, constraint-modeler, decision-tree-explorer, digital-twin-creator, future-scenario-generator, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "commands",
+    "simulation"
+  ],
+  "commands": "./commands/"
+}

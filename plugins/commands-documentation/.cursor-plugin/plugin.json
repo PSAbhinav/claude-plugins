@@ -1,0 +1,10 @@
+{
+  "name": "commands-documentation",
+  "description": "Slash commands — documentation (10): create-architecture-documentation, create-onboarding-guide, doc-api, docs-maintenance, generate-api-documentation, ….",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "commands": "./commands/"
+}

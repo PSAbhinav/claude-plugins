@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-career",
+  "version": "1.0.0",
+  "description": "Skills — career (21): academic-cv-builder, career-changer-translator, cover-letter-generator, creative-portfolio-resume, executive-resume-writer, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "career"
+  ],
+  "skills": "./skills/"
+}

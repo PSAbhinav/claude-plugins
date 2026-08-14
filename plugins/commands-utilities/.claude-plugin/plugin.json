@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "commands-utilities",
+  "version": "1.0.0",
+  "description": "Slash commands — utilities (21): all-tools, architecture-scenario-explorer, check-file, clean, clean-branches, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "commands",
+    "utilities"
+  ],
+  "commands": "./commands/"
+}

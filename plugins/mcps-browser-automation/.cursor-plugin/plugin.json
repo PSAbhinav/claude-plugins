@@ -1,0 +1,10 @@
+{
+  "name": "mcps-browser-automation",
+  "description": "MCP servers — browser_automation (6): automatalabs-playwright-server, browser-server, browserbase, browsermcp, executeautomation-playwright-server, …. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "mcpServers": "./.mcp.json"
+}

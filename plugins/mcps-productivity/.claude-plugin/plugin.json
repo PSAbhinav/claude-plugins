@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "mcps-productivity",
+  "version": "1.0.0",
+  "description": "MCP servers — productivity (3): google-workspace, monday-api-mcp, notionApi. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "mcp",
+    "productivity"
+  ],
+  "mcpServers": "./.mcp.json"
+}

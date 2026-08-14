@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-doordash",
+  "version": "1.0.0",
+  "description": "Skills — doordash (5): doordash-allergy-shield, doordash-group-orders, doordash-order-ledger, doordash-order-playbooks, doordash-spend-guard.",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "doordash"
+  ],
+  "skills": "./skills/"
+}

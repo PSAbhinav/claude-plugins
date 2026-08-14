@@ -1,0 +1,10 @@
+{
+  "name": "skills-utilities",
+  "description": "Skills — utilities (12): browser-automation, browser-extension-builder, busybox-on-windows, cf-crawl, domain-name-brainstormer, ….",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "skills": "./skills/"
+}

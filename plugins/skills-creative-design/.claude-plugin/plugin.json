@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-creative-design",
+  "version": "1.0.0",
+  "description": "Skills — creative-design (33): 3d-web-experience, Accessibility Auditor, algorithmic-art, c4-architecture, canvas-design, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "creative-design"
+  ],
+  "skills": "./skills/"
+}

@@ -1,0 +1,10 @@
+{
+  "name": "skills-ai-maestro",
+  "description": "Skills — ai-maestro (6): agent-management, agent-messaging, docs-search, graph-query, memory-search, ….",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "skills": "./skills/"
+}

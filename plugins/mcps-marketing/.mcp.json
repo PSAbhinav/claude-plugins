@@ -1,0 +1,25 @@
+{
+  "mcpServers": {
+    "fb-ads-mcp-server": {
+      "command": "python",
+      "args": [
+        "/path/to/your/fb-ads-mcp-server/server.py",
+        "--fb-token",
+        "YOUR_META_ACCESS_TOKEN"
+      ]
+    },
+    "google-ads": {
+      "command": "/full/path/to/your/project/.venv/bin/python",
+      "args": [
+        "/full/path/to/your/project/server.py"
+      ]
+    },
+    "posthell": {
+      "type": "http",
+      "url": "https://www.posthell.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer your_api_key"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "commands-deployment",
+  "version": "1.0.0",
+  "description": "Slash commands — deployment (11): add-changelog, blue-green-deployment, changelog-demo-command, ci-setup, containerize-application, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "commands",
+    "deployment"
+  ],
+  "commands": "./commands/"
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "agents-modernization",
+  "version": "1.0.0",
+  "description": "Agents — modernization (3): architecture-modernizer, cloud-migration-specialist, legacy-modernizer.",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "agents",
+    "modernization"
+  ]
+}

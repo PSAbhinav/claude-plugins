@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-ai-maestro",
+  "version": "1.0.0",
+  "description": "Skills — ai-maestro (6): agent-management, agent-messaging, docs-search, graph-query, memory-search, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "ai-maestro"
+  ],
+  "skills": "./skills/"
+}

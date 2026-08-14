@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-operations",
+  "version": "1.0.0",
+  "description": "Skills — operations (6): abc-xyz-segmentation, forecast-accuracy-review, otif-analysis, root-cause-pareto, safety-stock-review, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "operations"
+  ],
+  "skills": "./skills/"
+}

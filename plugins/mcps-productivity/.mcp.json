@@ -1,0 +1,33 @@
+{
+  "mcpServers": {
+    "google-workspace": {
+      "command": "uvx",
+      "args": [
+        "workspace-mcp"
+      ],
+      "env": {
+        "GOOGLE_OAUTH_CLIENT_ID": "<your-client-id>",
+        "GOOGLE_OAUTH_CLIENT_SECRET": "<your-client-secret>"
+      }
+    },
+    "monday-api-mcp": {
+      "command": "npx",
+      "args": [
+        "@mondaydotcomorg/monday-api-mcp",
+        "-t",
+        "your_monday_api_token"
+      ],
+      "env": {}
+    },
+    "notionApi": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@notionhq/notion-mcp-server"
+      ],
+      "env": {
+        "NOTION_TOKEN": "ntn_****"
+      }
+    }
+  }
+}

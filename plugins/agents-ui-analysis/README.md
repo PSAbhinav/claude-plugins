@@ -1,0 +1,11 @@
+# agents-ui-analysis
+
+Agents — ui-analysis (5): screenshot-business-analyzer, screenshot-interaction-analyzer, screenshot-reviewer, screenshot-synthesizer, screenshot-ui-analyzer.
+
+| Name | Description |
+|---|---|
+| screenshot-business-analyzer | Extracts business logic, functional modules, and data entities from UI screenshots |
+| screenshot-interaction-analyzer | Analyzes user interaction flows, clickable elements, and state transitions from UI screenshots |
+| screenshot-reviewer | Reviews synthesized task lists for completeness, consistency, and quality |
+| screenshot-synthesizer | Synthesizes analysis results from multiple agents into a unified feature list and task breakdown |
+| screenshot-ui-analyzer | Analyzes visual components, layout structure, and design patterns from UI screenshots |

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "agents-database",
+  "version": "1.0.0",
+  "description": "Agents — database (11): database-admin, database-administrator, database-architect, database-optimization, database-optimizer, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "agents",
+    "database"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "commands-game-development",
+  "version": "1.0.0",
+  "description": "Slash commands — game-development (5): game-analytics-integration, game-asset-pipeline, game-performance-profiler, game-testing-framework, unity-project-setup.",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "commands",
+    "game-development"
+  ],
+  "commands": "./commands/"
+}

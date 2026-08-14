@@ -1,0 +1,59 @@
+{
+  "mcpServers": {
+    "apify": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@apify/actors-mcp-server"
+      ],
+      "env": {
+        "APIFY_TOKEN": "<your-apify-token>"
+      }
+    },
+    "brightdata": {
+      "url": "https://mcp.brightdata.com/mcp?token=YOUR_BRIGHTDATA_API_TOKEN&pro=1"
+    },
+    "browseract": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "browseract-mcp"
+      ],
+      "env": {
+        "BROWSERACT_API_KEY": "<YOUR_BROWSERACT_API_KEY>"
+      }
+    },
+    "datalikers": {
+      "url": "https://mcp.datalikers.com/mcp/",
+      "headers": {
+        "Authorization": "Bearer <YOUR_DATALIKERS_API_KEY>"
+      }
+    },
+    "explorium": {
+      "url": "https://mcp.explorium.ai/mcp",
+      "headers": {
+        "api_key": "<YOUR_EXPLORIUM_API_KEY>"
+      }
+    },
+    "hikerapi": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "hikerapi-mcp"
+      ],
+      "env": {
+        "HIKERAPI_KEY": "<YOUR_HIKERAPI_KEY>"
+      }
+    },
+    "lamatok": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "lamatok-mcp"
+      ],
+      "env": {
+        "LAMATOK_KEY": "<YOUR_LAMATOK_KEY>"
+      }
+    }
+  }
+}

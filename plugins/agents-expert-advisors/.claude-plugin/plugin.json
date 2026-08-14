@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "agents-expert-advisors",
+  "version": "1.0.0",
+  "description": "Agents — expert-advisors (52): 4.1-Beast, address-comments, agent-expert, agent-installer, agent-organizer, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "agents",
+    "expert-advisors"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "commands-performance",
+  "version": "1.0.0",
+  "description": "Slash commands — performance (10): add-performance-monitoring, implement-caching-strategy, optimize-api-performance, optimize-build, optimize-bundle-size, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "commands",
+    "performance"
+  ],
+  "commands": "./commands/"
+}

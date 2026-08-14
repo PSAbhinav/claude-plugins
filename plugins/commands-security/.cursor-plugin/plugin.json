@@ -1,0 +1,10 @@
+{
+  "name": "commands-security",
+  "description": "Slash commands — security (6): add-authentication-system, dependency-audit, penetration-test, secrets-scanner, security-audit, ….",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "commands": "./commands/"
+}

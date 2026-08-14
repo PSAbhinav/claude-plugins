@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "commands-svelte",
+  "version": "1.0.0",
+  "description": "Slash commands — svelte (16): svelte-a11y, svelte-component, svelte-debug, svelte-migrate, svelte-optimize, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "commands",
+    "svelte"
+  ],
+  "commands": "./commands/"
+}

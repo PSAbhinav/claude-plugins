@@ -1,0 +1,7 @@
+# skills-analytics
+
+Skills — analytics (1): google-analytics.
+
+| Skill | Description |
+|---|---|
+| google-analytics | Analyze Google Analytics data, review website performance metrics, identify traffic patterns, and suggest data-driven improvements. Use when the user asks about analytics, website metrics, traffic analysis, conversion rates, user behavior, or performance opti… |

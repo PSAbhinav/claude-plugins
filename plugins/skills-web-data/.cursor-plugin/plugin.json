@@ -1,0 +1,10 @@
+{
+  "name": "skills-web-data",
+  "description": "Skills — web-data (6): bright-data-best-practices, bright-data-mcp, data-feeds, design-mirror, scrape, ….",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "skills": "./skills/"
+}

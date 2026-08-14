@@ -1,0 +1,9 @@
+{
+  "name": "agents-game-development",
+  "description": "Agents — game-development (5): 3d-artist, game-designer, game-developer, unity-game-developer, unreal-engine-developer.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  }
+}

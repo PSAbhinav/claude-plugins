@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-web-development",
+  "version": "1.0.0",
+  "description": "Skills — web-development (30): astro, blockrun, building-blog, chrome-extension-developer, drizzle-orm-expert, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "web-development"
+  ],
+  "skills": "./skills/"
+}

@@ -1,0 +1,3322 @@
+{
+  "name": "ccm",
+  "owner": {
+    "name": "ccm",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "metadata": {
+    "version": "1.2.0",
+    "description": "A curated Claude Code marketplace — a browsable catalog of agents, slash commands, skills, and MCP servers, plus independent community plugins installed directly from their public upstream repos.",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "agentic-actions-auditor",
+      "description": "Audits GitHub Actions workflows for security vulnerabilities in AI agent integrations (Claude Code Action, Gemini CLI, OpenAI Codex, GitHub AI Inference)",
+      "version": "1.2.1",
+      "author": {
+        "name": "Emilio López & Will Vandevanter"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/agentic-actions-auditor",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/trailofbits/skills",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/trailofbits/skills.git",
+        "upstreamUrl": "https://github.com/trailofbits/skills.git"
+      }
+    },
+    {
+      "name": "chrome-devtools-mcp",
+      "description": "Imported from grok",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "tags": [
+        "upstream",
+        "imported"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/ChromeDevTools/chrome-devtools-mcp.git"
+      }
+    },
+    {
+      "name": "claude-md-management",
+      "description": "Tools to maintain and improve CLAUDE.md files - audit quality, capture session learnings, and keep project memory current.",
+      "version": "latest",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/claude-md-management",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/claude-md-management",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/anthropics/claude-plugins-official.git",
+        "upstreamUrl": "https://github.com/anthropics/claude-plugins-official.git"
+      }
+    },
+    {
+      "name": "claude-mem",
+      "description": "Persistent memory system for Claude Code - context compression across sessions",
+      "version": "10.5.5",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/thedotmack/claude-mem.git",
+        "path": "plugin",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/thedotmack/claude-mem",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/thedotmack/claude-mem.git",
+        "upstreamUrl": "https://github.com/thedotmack/claude-mem.git"
+      }
+    },
+    {
+      "name": "cybersecurity-skills",
+      "description": "817 cybersecurity skills covering web security, pentesting, DFIR, threat intelligence, cloud security, malware analysis, and more. Mapped to 6 frameworks.",
+      "version": "1.3.0",
+      "author": {
+        "name": "mukul975"
+      },
+      "category": "security",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "tags": [
+        "upstream",
+        "opt-in"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills.git",
+        "upstreamUrl": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills.git",
+        "defaultEnabled": false
+      },
+      "keywords": [
+        "cybersecurity",
+        "pentesting",
+        "forensics",
+        "threat-intelligence",
+        "cloud-security",
+        "malware-analysis",
+        "incident-response",
+        "zero-trust",
+        "devsecops"
+      ]
+    },
+    {
+      "name": "differential-review",
+      "description": "Security-focused differential review of code changes with git history analysis and blast radius estimation",
+      "version": "1.1.1",
+      "author": {
+        "name": "Omar Inuwa"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/differential-review",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/trailofbits/skills",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/trailofbits/skills.git",
+        "upstreamUrl": "https://github.com/trailofbits/skills.git"
+      }
+    },
+    {
+      "name": "figma",
+      "description": "Figma design platform integration. Access design files, extract component information, read design tokens, and translate designs into code. Bridge the gap between design and development workflows.",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "design",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/figma/mcp-server-guide.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/figma/mcp-server-guide",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/anthropics/claude-plugins-official.git",
+        "upstreamUrl": "https://github.com/figma/mcp-server-guide.git"
+      }
+    },
+    {
+      "name": "frontend-design",
+      "description": "Create distinctive, production-grade frontend interfaces with high design quality. Generates creative, polished code that avoids generic AI aesthetics.",
+      "version": "latest",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/frontend-design",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/plugins/frontend-design",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/anthropics/claude-plugins-official.git",
+        "upstreamUrl": "https://github.com/anthropics/claude-plugins-official.git"
+      }
+    },
+    {
+      "name": "greptile",
+      "description": "AI-powered codebase search and understanding. Query your repositories using natural language to find relevant code, understand dependencies, and get contextual answers about your codebase architecture.",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "external_plugins/greptile",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/greptile",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/anthropics/claude-plugins-official.git",
+        "upstreamUrl": "https://github.com/anthropics/claude-plugins-official.git"
+      }
+    },
+    {
+      "name": "i-have-adhd",
+      "description": "Plugin i-have-adhd",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/ayghri/i-have-adhd.git",
+        "path": "skills/i-have-adhd",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/ayghri/i-have-adhd",
+      "tags": [
+        "upstream",
+        "imported",
+        "opt-in"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/ayghri/i-have-adhd.git",
+        "defaultEnabled": false
+      }
+    },
+    {
+      "name": "insecure-defaults",
+      "description": "Detects insecure default configurations including hardcoded credentials, fallback secrets, weak authentication defaults, and dangerous values in production",
+      "version": "1.0.1",
+      "author": {
+        "name": "Trail of Bits",
+        "url": "https://github.com/trailofbits"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/insecure-defaults",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/trailofbits/skills",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/trailofbits/skills.git",
+        "upstreamUrl": "https://github.com/trailofbits/skills.git"
+      }
+    },
+    {
+      "name": "kotlin-agent-skills",
+      "description": "JetBrains/Kotlin official AI agent skills for Kotlin: AGP 9, Java-to-Kotlin, KMP native performance, JPA mapping, CocoaPods→SPM, immutable collections.",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Kotlin/kotlin-agent-skills.git",
+        "path": "plugins/kotlin-agent-skills",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/Kotlin/kotlin-agent-skills",
+      "tags": [
+        "upstream",
+        "imported"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/Kotlin/kotlin-agent-skills.git"
+      }
+    },
+    {
+      "name": "playwright",
+      "description": "Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "testing",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "external_plugins/playwright",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-public/tree/main/external_plugins/playwright",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/anthropics/claude-plugins-official.git",
+        "upstreamUrl": "https://github.com/anthropics/claude-plugins-official.git"
+      }
+    },
+    {
+      "name": "python-development",
+      "description": "Python engineering skills incl. python-performance-optimization (profiling, hot paths, complexity), async patterns, type safety, testing, packaging, uv.",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/wshobson/agents.git",
+        "path": "plugins/python-development",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/wshobson/agents",
+      "tags": [
+        "upstream",
+        "imported"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/wshobson/agents.git"
+      }
+    },
+    {
+      "name": "semgrep-rule-creator",
+      "description": "Create custom Semgrep rules for detecting bug patterns and security vulnerabilities",
+      "version": "1.2.2",
+      "author": {
+        "name": "Maciej Domanski"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/semgrep-rule-creator",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/trailofbits/skills",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/trailofbits/skills.git",
+        "upstreamUrl": "https://github.com/trailofbits/skills.git"
+      }
+    },
+    {
+      "name": "sharp-edges",
+      "description": "Identify error-prone APIs, dangerous configurations, and footgun designs that enable security mistakes",
+      "version": "1.1.1",
+      "author": {
+        "name": "Scott Arciszewski",
+        "url": "https://github.com/trailofbits"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/sharp-edges",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/trailofbits/skills",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/trailofbits/skills.git",
+        "upstreamUrl": "https://github.com/trailofbits/skills.git"
+      }
+    },
+    {
+      "name": "skill-creator",
+      "description": "Create new skills, improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, update or optimize an existing skill, run evals to test a skill, or benchmark skill performance with variance analysis.",
+      "version": "latest",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/skill-creator",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/skill-creator",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/anthropics/claude-plugins-official.git",
+        "upstreamUrl": "https://github.com/anthropics/claude-plugins-official.git"
+      }
+    },
+    {
+      "name": "static-analysis",
+      "description": "Static analysis toolkit with CodeQL, Semgrep, and SARIF parsing for security vulnerability detection",
+      "version": "1.2.2",
+      "author": {
+        "name": "Axel Mierczuk & Paweł Płatek"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/static-analysis",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/trailofbits/skills",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/trailofbits/skills.git",
+        "upstreamUrl": "https://github.com/trailofbits/skills.git"
+      }
+    },
+    {
+      "name": "superpowers",
+      "description": "Superpowers teaches Claude brainstorming, subagent driven development with built in code review, systematic debugging, and red/green TDD. Additionally, it teaches Claude how to author and test new skills.",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "development",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/obra/superpowers.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/obra/superpowers.git",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/anthropics/claude-plugins-official.git",
+        "upstreamUrl": "https://github.com/obra/superpowers.git"
+      }
+    },
+    {
+      "name": "supply-chain-risk-auditor",
+      "description": "Audit supply-chain threat landscape of project dependencies for exploitation or takeover risk",
+      "version": "1.0.1",
+      "author": {
+        "name": "Spencer Michaels"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/supply-chain-risk-auditor",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/trailofbits/skills",
+      "tags": [
+        "upstream"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/trailofbits/skills.git",
+        "upstreamUrl": "https://github.com/trailofbits/skills.git"
+      }
+    },
+    {
+      "name": "testing-handbook-skills",
+      "description": "Skills from the Trail of Bits Application Security Testing Handbook (appsec.guide)",
+      "version": "1.0.2",
+      "author": {
+        "name": "Paweł Płatek"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/trailofbits/skills.git",
+        "path": "plugins/testing-handbook-skills",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/trailofbits/skills",
+      "tags": [
+        "upstream",
+        "opt-in"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/trailofbits/skills.git",
+        "upstreamUrl": "https://github.com/trailofbits/skills.git",
+        "defaultEnabled": false
+      }
+    },
+    {
+      "name": "vercel",
+      "description": "Imported from grok",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/vercel/vercel-plugin.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/vercel/vercel-plugin",
+      "tags": [
+        "upstream",
+        "imported"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/vercel/vercel-plugin.git"
+      }
+    },
+    {
+      "name": "visual-explainer",
+      "description": "Generate beautiful HTML pages for diagrams, diff reviews, plan reviews, slides, and data tables",
+      "version": "0.7.1",
+      "author": {
+        "name": "nicobailon"
+      },
+      "category": "visualization",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/nicobailon/visual-explainer.git",
+        "path": "plugins/visual-explainer",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/nicobailon/visual-explainer",
+      "tags": [
+        "upstream",
+        "opt-in"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/nicobailon/visual-explainer.git",
+        "upstreamUrl": "https://github.com/nicobailon/visual-explainer.git",
+        "defaultEnabled": false
+      },
+      "keywords": [
+        "diagrams",
+        "html",
+        "visualization",
+        "diff-review",
+        "slides"
+      ]
+    },
+    {
+      "name": "web-quality",
+      "description": "Web quality + performance skills from Addy Osmani (Chrome): performance, Core Web Vitals, accessibility, SEO, best practices, audit.",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/addyosmani/web-quality-skills.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/addyosmani/web-quality-skills",
+      "tags": [
+        "upstream",
+        "imported"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/addyosmani/web-quality-skills.git"
+      }
+    },
+    {
+      "name": "webgpu-threejs-tsl",
+      "description": "Comprehensive guide for WebGPU Three.js with TSL - covers renderer setup, node materials, compute shaders, post-processing, and WGSL integration",
+      "version": "latest",
+      "author": {
+        "name": "upstream"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/dgreenheck/webgpu-claude-skill.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/dgreenheck/webgpu-claude-skill",
+      "tags": [
+        "upstream",
+        "opt-in"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamRepo": "https://github.com/dgreenheck/webgpu-claude-skill.git",
+        "upstreamUrl": "https://github.com/dgreenheck/webgpu-claude-skill.git",
+        "defaultEnabled": false
+      }
+    },
+    {
+      "name": "agent-sdk-dev",
+      "description": "Claude Agent SDK development: build agents with sessions, subagents, hooks, and MCP using SDK-correct patterns.",
+      "version": "latest",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/agent-sdk-dev",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/agent-sdk-dev",
+      "tags": [
+        "upstream",
+        "direct"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/anthropics/claude-plugins-official.git"
+      }
+    },
+    {
+      "name": "mcp-server-dev",
+      "description": "MCP server development: tool design conventions, schemas, and testing for Model Context Protocol servers.",
+      "version": "latest",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/mcp-server-dev",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/mcp-server-dev",
+      "tags": [
+        "upstream",
+        "direct"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/anthropics/claude-plugins-official.git"
+      }
+    },
+    {
+      "name": "typescript-lsp",
+      "description": "TypeScript language server integration for real-time type diagnostics while editing.",
+      "version": "latest",
+      "author": {
+        "name": "Anthropic"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/anthropics/claude-plugins-official.git",
+        "path": "plugins/typescript-lsp",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/typescript-lsp",
+      "tags": [
+        "upstream",
+        "direct"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/anthropics/claude-plugins-official.git"
+      }
+    },
+    {
+      "name": "threejs-skills",
+      "description": "Three.js skill pack: animation, geometry, lighting, loaders, materials, postprocessing, shaders, textures, interaction, fundamentals.",
+      "version": "1.0.0",
+      "author": {
+        "name": "CloudAI-X"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/CloudAI-X/threejs-skills.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/CloudAI-X/threejs-skills",
+      "tags": [
+        "upstream",
+        "3d"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "updatePolicy": "tracks-upstream",
+        "note": "Installs directly from public upstream."
+      }
+    },
+    {
+      "name": "claude-design-skills",
+      "description": "Design skill pack for UI/animation/3D polish (freshtechbro).",
+      "version": "1.0.0",
+      "author": {
+        "name": "freshtechbro"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/freshtechbro/claudedesignskills.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/freshtechbro/claudedesignskills",
+      "tags": [
+        "upstream",
+        "3d"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "updatePolicy": "tracks-upstream",
+        "note": "Installs directly from public upstream."
+      }
+    },
+    {
+      "name": "agents-accessibility",
+      "version": "1.0.0",
+      "description": "Agents — accessibility (1): accessibility-tester.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-accessibility",
+      "keywords": [
+        "agents",
+        "accessibility"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-ai-specialists",
+      "version": "1.0.0",
+      "description": "Agents — ai-specialists (8): ai-ethics-advisor, hackathon-ai-strategist, llm-architect, llms-maintainer, model-evaluator, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-ai-specialists",
+      "keywords": [
+        "agents",
+        "ai-specialists"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-api-graphql",
+      "version": "1.0.0",
+      "description": "Agents — api-graphql (6): api-architect, api-designer, graphql-architect, graphql-performance-optimizer, graphql-security-specialist, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-api-graphql",
+      "keywords": [
+        "agents",
+        "api-graphql"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-blockchain-web3",
+      "version": "1.0.0",
+      "description": "Agents — blockchain-web3 (4): blockchain-developer, smart-contract-auditor, smart-contract-specialist, web3-integration-specialist.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-blockchain-web3",
+      "keywords": [
+        "agents",
+        "blockchain-web3"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-business-marketing",
+      "version": "1.0.0",
+      "description": "Agents — business-marketing (23): business-analyst, communication-excellence-coach, competitive-analyst, content-marketer, customer-success-manager, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-business-marketing",
+      "keywords": [
+        "agents",
+        "business-marketing"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-data-ai",
+      "version": "1.0.0",
+      "description": "Agents — data-ai (40): adr-generator, ai-engineer, amplitude-experiment-implementation, blueprint-mode, blueprint-mode-codex, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-data-ai",
+      "keywords": [
+        "agents",
+        "data-ai"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-database",
+      "version": "1.0.0",
+      "description": "Agents — database (11): database-admin, database-administrator, database-architect, database-optimization, database-optimizer, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-database",
+      "keywords": [
+        "agents",
+        "database"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-deep-research-team",
+      "version": "1.0.0",
+      "description": "Agents — deep-research-team (16): academic-researcher, agent-overview, competitive-intelligence-analyst, data-analyst, data-researcher, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-deep-research-team",
+      "keywords": [
+        "agents",
+        "deep-research-team"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-development-team",
+      "version": "1.0.0",
+      "description": "Agents — development-team (17): backend-architect, backend-developer, cli-ui-designer, code-architect, code-explorer, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-development-team",
+      "keywords": [
+        "agents",
+        "development-team"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-development-tools",
+      "version": "1.0.0",
+      "description": "Agents — development-tools (35): accessibility-tester, architect-reviewer, ascii-ui-mockup-generator, build-engineer, chaos-engineer, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-development-tools",
+      "keywords": [
+        "agents",
+        "development-tools"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-devops-infrastructure",
+      "version": "1.0.0",
+      "description": "Agents — devops-infrastructure (40): apify-integration-expert, arm-migration, azure-iac-exporter, azure-iac-generator, azure-infra-engineer, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-devops-infrastructure",
+      "keywords": [
+        "agents",
+        "devops-infrastructure"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-documentation",
+      "version": "1.0.0",
+      "description": "Agents — documentation (11): api-documenter, arch, changelog-generator, context7, diagram-architect, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-documentation",
+      "keywords": [
+        "agents",
+        "documentation"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-expert-advisors",
+      "version": "1.0.0",
+      "description": "Agents — expert-advisors (52): 4.1-Beast, address-comments, agent-expert, agent-installer, agent-organizer, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-expert-advisors",
+      "keywords": [
+        "agents",
+        "expert-advisors"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-ffmpeg-clip-team",
+      "version": "1.0.0",
+      "description": "Agents — ffmpeg-clip-team (8): audio-mixer, audio-quality-controller, podcast-content-analyzer, podcast-metadata-specialist, podcast-transcriber, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-ffmpeg-clip-team",
+      "keywords": [
+        "agents",
+        "ffmpeg-clip-team"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-finance",
+      "version": "1.0.0",
+      "description": "Agents — finance (5): bettoredge-value-finder, fintech-engineer, payment-integration, quant-analyst, risk-manager.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-finance",
+      "keywords": [
+        "agents",
+        "finance"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-game-development",
+      "version": "1.0.0",
+      "description": "Agents — game-development (5): 3d-artist, game-designer, game-developer, unity-game-developer, unreal-engine-developer.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-game-development",
+      "keywords": [
+        "agents",
+        "game-development"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-git",
+      "version": "1.0.0",
+      "description": "Agents — git (3): commit-guardian, git-flow-manager, git-workflow-manager.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-git",
+      "keywords": [
+        "agents",
+        "git"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-mcp-dev-team",
+      "version": "1.0.0",
+      "description": "Agents — mcp-dev-team (8): mcp-deployment-orchestrator, mcp-developer, mcp-integration-engineer, mcp-protocol-specialist, mcp-registry-navigator, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-mcp-dev-team",
+      "keywords": [
+        "agents",
+        "mcp-dev-team"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-modernization",
+      "version": "1.0.0",
+      "description": "Agents — modernization (3): architecture-modernizer, cloud-migration-specialist, legacy-modernizer.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-modernization",
+      "keywords": [
+        "agents",
+        "modernization"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-obsidian-ops-team",
+      "version": "1.0.0",
+      "description": "Agents — obsidian-ops-team (7): connection-agent, content-curator, metadata-agent, moc-agent, review-agent, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-obsidian-ops-team",
+      "keywords": [
+        "agents",
+        "obsidian-ops-team"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-ocr-extraction-team",
+      "version": "1.0.0",
+      "description": "Agents — ocr-extraction-team (7): document-structure-analyzer, markdown-syntax-formatter, ocr-grammar-fixer, ocr-preprocessing-optimizer, ocr-quality-assurance, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-ocr-extraction-team",
+      "keywords": [
+        "agents",
+        "ocr-extraction-team"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-performance-testing",
+      "version": "1.0.0",
+      "description": "Agents — performance-testing (5): load-testing-specialist, performance-engineer, react-performance-optimization, test-automator, web-vitals-optimizer.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-performance-testing",
+      "keywords": [
+        "agents",
+        "performance-testing"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-podcast-creator-team",
+      "version": "1.0.0",
+      "description": "Agents — podcast-creator-team (11): academic-research-synthesizer, comprehensive-researcher, episode-orchestrator, guest-outreach-coordinator, market-research-analyst, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-podcast-creator-team",
+      "keywords": [
+        "agents",
+        "podcast-creator-team"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-programming-languages",
+      "version": "1.0.0",
+      "description": "Agents — programming-languages (50): angular-architect, c-pro, c-sharp-pro, cpp-pro, csharp-developer, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-programming-languages",
+      "keywords": [
+        "agents",
+        "programming-languages"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-realtime",
+      "version": "1.0.0",
+      "description": "Agents — realtime (2): supabase-realtime-optimizer, websocket-engineer.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-realtime",
+      "keywords": [
+        "agents",
+        "realtime"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-security",
+      "version": "1.0.0",
+      "description": "Agents — security (24): ad-security-reviewer, ai-agent-audit-specialist, api-security-audit, comet-opik, compliance-auditor, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-security",
+      "keywords": [
+        "agents",
+        "security"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-ui-analysis",
+      "version": "1.0.0",
+      "description": "Agents — ui-analysis (5): screenshot-business-analyzer, screenshot-interaction-analyzer, screenshot-reviewer, screenshot-synthesizer, screenshot-ui-analyzer.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-ui-analysis",
+      "keywords": [
+        "agents",
+        "ui-analysis"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "agents-web-tools",
+      "version": "1.0.0",
+      "description": "Agents — web-tools (16): accessibility, aem-frontend-specialist, electron-angular-native, expert-nextjs-developer, expert-react-frontend-engineer, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "agents",
+      "source": "./plugins/agents-web-tools",
+      "keywords": [
+        "agents",
+        "web-tools"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-analysis",
+      "version": "1.0.0",
+      "description": "Slash commands — analysis (1): supply-chain-audit.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-analysis",
+      "keywords": [
+        "commands",
+        "analysis"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-automation",
+      "version": "1.0.0",
+      "description": "Slash commands — automation (5): act, ci-pipeline, husky, szamlazz, workflow-orchestrator.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-automation",
+      "keywords": [
+        "commands",
+        "automation"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-azure",
+      "version": "1.0.0",
+      "description": "Slash commands — azure (2): appinsights-instrumentation, azure-role-selector.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-azure",
+      "keywords": [
+        "commands",
+        "azure"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-database",
+      "version": "1.0.0",
+      "description": "Slash commands — database (9): snowflake-semanticview, supabase-backup-manager, supabase-data-explorer, supabase-migration-assistant, supabase-performance-optimizer, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-database",
+      "keywords": [
+        "commands",
+        "database"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-deployment",
+      "version": "1.0.0",
+      "description": "Slash commands — deployment (11): add-changelog, blue-green-deployment, changelog-demo-command, ci-setup, containerize-application, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-deployment",
+      "keywords": [
+        "commands",
+        "deployment"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-design",
+      "version": "1.0.0",
+      "description": "Slash commands — design (1): web-design-reviewer.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-design",
+      "keywords": [
+        "commands",
+        "design"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-documentation",
+      "version": "1.0.0",
+      "description": "Slash commands — documentation (10): create-architecture-documentation, create-onboarding-guide, doc-api, docs-maintenance, generate-api-documentation, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-documentation",
+      "keywords": [
+        "commands",
+        "documentation"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-doordash",
+      "version": "1.0.0",
+      "description": "Slash commands — doordash (5): doordash-budget, doordash-lunch, doordash-playbook, doordash-profile, doordash-report.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-doordash",
+      "keywords": [
+        "commands",
+        "doordash"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-game-development",
+      "version": "1.0.0",
+      "description": "Slash commands — game-development (5): game-analytics-integration, game-asset-pipeline, game-performance-profiler, game-testing-framework, unity-project-setup.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-game-development",
+      "keywords": [
+        "commands",
+        "game-development"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-git",
+      "version": "1.0.0",
+      "description": "Slash commands — git (5): feature, finish, flow-status, hotfix, release.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-git",
+      "keywords": [
+        "commands",
+        "git"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-git-workflow",
+      "version": "1.0.0",
+      "description": "Slash commands — git-workflow (14): branch-cleanup, commit, create-pr, create-pull-request, create-worktrees, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-git-workflow",
+      "keywords": [
+        "commands",
+        "git-workflow"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-google-workspace",
+      "version": "1.0.0",
+      "description": "Slash commands — google-workspace (107): gws-admin, gws-admin-reports, gws-alertcenter, gws-apps-script, gws-apps-script-push, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-google-workspace",
+      "keywords": [
+        "commands",
+        "google-workspace"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-marketing",
+      "version": "1.0.0",
+      "description": "Slash commands — marketing (5): publisher-all, publisher-devto, publisher-linkedin, publisher-medium, publisher-x.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-marketing",
+      "keywords": [
+        "commands",
+        "marketing"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-nextjs-vercel",
+      "version": "1.0.0",
+      "description": "Slash commands — nextjs-vercel (10): nextjs-api-tester, nextjs-bundle-analyzer, nextjs-component-generator, nextjs-middleware-creator, nextjs-migration-helper, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-nextjs-vercel",
+      "keywords": [
+        "commands",
+        "nextjs-vercel"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-orchestration",
+      "version": "1.0.0",
+      "description": "Slash commands — orchestration (15): archive, commit, feature-analyzer, feature-dev, feature-pipeline, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-orchestration",
+      "keywords": [
+        "commands",
+        "orchestration"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-performance",
+      "version": "1.0.0",
+      "description": "Slash commands — performance (10): add-performance-monitoring, implement-caching-strategy, optimize-api-performance, optimize-build, optimize-bundle-size, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-performance",
+      "keywords": [
+        "commands",
+        "performance"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-project-management",
+      "version": "1.0.0",
+      "description": "Slash commands — project-management (20): add-package, add-to-changelog, create-feature, create-jtbd, create-prd, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-project-management",
+      "keywords": [
+        "commands",
+        "project-management"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-security",
+      "version": "1.0.0",
+      "description": "Slash commands — security (6): add-authentication-system, dependency-audit, penetration-test, secrets-scanner, security-audit, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-security",
+      "keywords": [
+        "commands",
+        "security"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-setup",
+      "version": "1.0.0",
+      "description": "Slash commands — setup (15): create-database-migrations, design-database-schema, design-rest-api, implement-graphql-api, migrate-to-typescript, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-setup",
+      "keywords": [
+        "commands",
+        "setup"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-simulation",
+      "version": "1.0.0",
+      "description": "Slash commands — simulation (10): business-scenario-explorer, constraint-modeler, decision-tree-explorer, digital-twin-creator, future-scenario-generator, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-simulation",
+      "keywords": [
+        "commands",
+        "simulation"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-svelte",
+      "version": "1.0.0",
+      "description": "Slash commands — svelte (16): svelte-a11y, svelte-component, svelte-debug, svelte-migrate, svelte-optimize, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-svelte",
+      "keywords": [
+        "commands",
+        "svelte"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-sync",
+      "version": "1.0.0",
+      "description": "Slash commands — sync (14): bidirectional-sync, bulk-import-issues, cross-reference-manager, issue-to-linear-task, linear-task-to-issue, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-sync",
+      "keywords": [
+        "commands",
+        "sync"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-team",
+      "version": "1.0.0",
+      "description": "Slash commands — team (14): architecture-review, decision-quality-analyzer, dependency-mapper, estimate-assistant, issue-triage, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-team",
+      "keywords": [
+        "commands",
+        "team"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-testing",
+      "version": "1.0.0",
+      "description": "Slash commands — testing (15): add-mutation-testing, add-property-based-testing, e2e-setup, generate-test-cases, generate-tests, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-testing",
+      "keywords": [
+        "commands",
+        "testing"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "commands-utilities",
+      "version": "1.0.0",
+      "description": "Slash commands — utilities (21): all-tools, architecture-scenario-explorer, check-file, clean, clean-branches, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "commands",
+      "source": "./plugins/commands-utilities",
+      "keywords": [
+        "commands",
+        "utilities"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-audio",
+      "version": "1.0.0",
+      "description": "MCP servers — audio (1): elevenlabs. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-audio",
+      "keywords": [
+        "mcp",
+        "audio"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-browser-automation",
+      "version": "1.0.0",
+      "description": "MCP servers — browser_automation (6): automatalabs-playwright-server, browser-server, browserbase, browsermcp, executeautomation-playwright-server, …. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-browser-automation",
+      "keywords": [
+        "mcp",
+        "browser-automation"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-database",
+      "version": "1.0.0",
+      "description": "MCP servers — database (8): dbhub, mongodb-official, mysql, Neon, postgres-documentation, …. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-database",
+      "keywords": [
+        "mcp",
+        "database"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-deepgraph",
+      "version": "1.0.0",
+      "description": "MCP servers — deepgraph (4): DeepGraph Next.js MCP, DeepGraph React MCP, DeepGraph TypeScript MCP, DeepGraph Vue MCP. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-deepgraph",
+      "keywords": [
+        "mcp",
+        "deepgraph"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-deepresearch",
+      "version": "1.0.0",
+      "description": "MCP servers — deepresearch (1): mcp-server-nia. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-deepresearch",
+      "keywords": [
+        "mcp",
+        "deepresearch"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-devtools",
+      "version": "1.0.0",
+      "description": "MCP servers — devtools (45):microsoft/clarity-mcp-server, aks, android-mcp, bitbucket, chrome-devtools, …. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-devtools",
+      "keywords": [
+        "mcp",
+        "devtools"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-filesystem",
+      "version": "1.0.0",
+      "description": "MCP servers — filesystem (1): filesystem. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-filesystem",
+      "keywords": [
+        "mcp",
+        "filesystem"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-integration",
+      "version": "1.0.0",
+      "description": "MCP servers — integration (6): alpaca-trading, footballbin-predictions, github, memex, memory, …. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-integration",
+      "keywords": [
+        "mcp",
+        "integration"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-marketing",
+      "version": "1.0.0",
+      "description": "MCP servers — marketing (3): fb-ads-mcp-server, google-ads, posthell. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-marketing",
+      "keywords": [
+        "mcp",
+        "marketing"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-productivity",
+      "version": "1.0.0",
+      "description": "MCP servers — productivity (3): google-workspace, monday-api-mcp, notionApi. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-productivity",
+      "keywords": [
+        "mcp",
+        "productivity"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-research",
+      "version": "1.0.0",
+      "description": "MCP servers — research (1): arxiv-mcp-server. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-research",
+      "keywords": [
+        "mcp",
+        "research"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-web",
+      "version": "1.0.0",
+      "description": "MCP servers — web (6): fetch, searxng, tinyfish, web-reader, web-search-prime, …. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-web",
+      "keywords": [
+        "mcp",
+        "web"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "mcps-web-data",
+      "version": "1.0.0",
+      "description": "MCP servers — web-data (7): apify, brightdata, browseract, datalikers, explorium, …. NOTE: enabling starts ALL servers in this pack; most need API keys/env config first.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "mcp",
+      "source": "./plugins/mcps-web-data",
+      "keywords": [
+        "mcp",
+        "web-data"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-ai-maestro",
+      "version": "1.0.0",
+      "description": "Skills — ai-maestro (6): agent-management, agent-messaging, docs-search, graph-query, memory-search, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-ai-maestro",
+      "keywords": [
+        "skills",
+        "ai-maestro"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-ai-research",
+      "version": "1.0.0",
+      "description": "Skills — ai-research (130): agent-evaluation, agent-manager-skill, agent-memory-mcp, agent-memory-systems, agent-tool-builder, …. LARGE pack — enable only when needed.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-ai-research",
+      "keywords": [
+        "skills",
+        "ai-research"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-analytics",
+      "version": "1.0.0",
+      "description": "Skills — analytics (1): google-analytics.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-analytics",
+      "keywords": [
+        "skills",
+        "analytics"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-business-marketing",
+      "version": "1.0.0",
+      "description": "Skills — business-marketing (48): ab-test-setup, agile-product-owner, ai-product, ai-wrapper-product, analytics-tracking, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-business-marketing",
+      "keywords": [
+        "skills",
+        "business-marketing"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-career",
+      "version": "1.0.0",
+      "description": "Skills — career (21): academic-cv-builder, career-changer-translator, cover-letter-generator, creative-portfolio-resume, executive-resume-writer, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-career",
+      "keywords": [
+        "skills",
+        "career"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-creative-design",
+      "version": "1.0.0",
+      "description": "Skills — creative-design (33): 3d-web-experience, Accessibility Auditor, algorithmic-art, c4-architecture, canvas-design, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-creative-design",
+      "keywords": [
+        "skills",
+        "creative-design"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-database",
+      "version": "1.0.0",
+      "description": "Skills — database (13): alloydb-basics, bigquery-basics, cloud-sql-basics, database-architect, database-migration, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-database",
+      "keywords": [
+        "skills",
+        "database"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-design-to-code",
+      "version": "1.0.0",
+      "description": "Skills — design-to-code (1): design-to-code.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-design-to-code",
+      "keywords": [
+        "skills",
+        "design-to-code"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-development",
+      "version": "1.0.0",
+      "description": "Skills — development (227): accessibility, Agent Development, agent-md-refactor, agirails-agent-payments, algolia-search, …. LARGE pack — enable only when needed.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-development",
+      "keywords": [
+        "skills",
+        "development"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-document-processing",
+      "version": "1.0.0",
+      "description": "Skills — document-processing (18): doc, documentation-templates, docx, docx-official, json-canvas, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-document-processing",
+      "keywords": [
+        "skills",
+        "document-processing"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-doordash",
+      "version": "1.0.0",
+      "description": "Skills — doordash (5): doordash-allergy-shield, doordash-group-orders, doordash-order-ledger, doordash-order-playbooks, doordash-spend-guard.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-doordash",
+      "keywords": [
+        "skills",
+        "doordash"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-enterprise-communication",
+      "version": "1.0.0",
+      "description": "Skills — enterprise-communication (33): backend-to-frontend-handoff-docs, brand-guidelines, capa-officer, daily-meeting-update, Data Privacy Compliance, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-enterprise-communication",
+      "keywords": [
+        "skills",
+        "enterprise-communication"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-git",
+      "version": "1.0.0",
+      "description": "Skills — git (3): commit-smart, gcc, star-history-chart.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-git",
+      "keywords": [
+        "skills",
+        "git"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-gmod-addon-maker",
+      "version": "1.0.0",
+      "description": "Skills — gmod-addon-maker (1): gmod-addon-maker.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-gmod-addon-maker",
+      "keywords": [
+        "skills",
+        "gmod-addon-maker"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-marketing",
+      "version": "1.0.0",
+      "description": "Skills — marketing (1): x-twitter-scraper.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-marketing",
+      "keywords": [
+        "skills",
+        "marketing"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-media",
+      "version": "1.0.0",
+      "description": "Skills — media (5): image-enhancer, screenshot, speech, transcribe, video-downloader.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-media",
+      "keywords": [
+        "skills",
+        "media"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-operations",
+      "version": "1.0.0",
+      "description": "Skills — operations (6): abc-xyz-segmentation, forecast-accuracy-review, otif-analysis, root-cause-pareto, safety-stock-review, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-operations",
+      "keywords": [
+        "skills",
+        "operations"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-pocketbase",
+      "version": "1.0.0",
+      "description": "Skills — pocketbase (6): PocketBase API Rules, PocketBase Collections, PocketBase Deploy, PocketBase Hooks, PocketBase Migrations, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-pocketbase",
+      "keywords": [
+        "skills",
+        "pocketbase"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-productivity",
+      "version": "1.0.0",
+      "description": "Skills — productivity (48): address-github-comments, avoid-ai-writing, brainstorming, claude-code-sessions, code-review-excellence, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-productivity",
+      "keywords": [
+        "skills",
+        "productivity"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-railway",
+      "version": "1.0.0",
+      "description": "Skills — railway (12): railway-database, railway-deploy, railway-deployment, railway-docs, railway-domain, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-railway",
+      "keywords": [
+        "skills",
+        "railway"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-scientific",
+      "version": "1.0.0",
+      "description": "Skills — scientific (139): adaptyv, aeon, alphafold-database, anndata, arboreto, …. LARGE pack — enable only when needed.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-scientific",
+      "keywords": [
+        "skills",
+        "scientific"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-security",
+      "version": "1.0.0",
+      "description": "Skills — security (47): Active Directory Attacks, API Fuzzing for Bug Bounty, api-security-best-practices, api-security-testing, AWS Penetration Testing, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-security",
+      "keywords": [
+        "skills",
+        "security"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-sentry",
+      "version": "1.0.0",
+      "description": "Skills — sentry (6): code-review, commit, create-pr, deslop, find-bugs, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-sentry",
+      "keywords": [
+        "skills",
+        "sentry"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-sports",
+      "version": "1.0.0",
+      "description": "Skills — sports (1): footballbin-predictions.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-sports",
+      "keywords": [
+        "skills",
+        "sports"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-utilities",
+      "version": "1.0.0",
+      "description": "Skills — utilities (12): browser-automation, browser-extension-builder, busybox-on-windows, cf-crawl, domain-name-brainstormer, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-utilities",
+      "keywords": [
+        "skills",
+        "utilities"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-video",
+      "version": "1.0.0",
+      "description": "Skills — video (4): manim, motion-canvas, remotion, sora.",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-video",
+      "keywords": [
+        "skills",
+        "video"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-web-data",
+      "version": "1.0.0",
+      "description": "Skills — web-data (6): bright-data-best-practices, bright-data-mcp, data-feeds, design-mirror, scrape, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-web-data",
+      "keywords": [
+        "skills",
+        "web-data"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-web-development",
+      "version": "1.0.0",
+      "description": "Skills — web-development (30): astro, blockrun, building-blog, chrome-extension-developer, drizzle-orm-expert, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-web-development",
+      "keywords": [
+        "skills",
+        "web-development"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    },
+    {
+      "name": "skills-workflow-automation",
+      "version": "1.0.0",
+      "description": "Skills — workflow-automation (22): dependabot-review, github-actions-templates, github-automation, github-workflow-automation, gitops-workflow, ….",
+      "author": {
+        "name": "Claude Marketplace",
+        "url": "https://github.com/PSAbhinav/claude-plugins"
+      },
+      "category": "skills",
+      "source": "./plugins/skills-workflow-automation",
+      "keywords": [
+        "skills",
+        "workflow-automation"
+      ],
+      "tags": [
+        "first-party",
+        "pack"
+      ],
+      "metadata": {
+        "ownership": "vendored-upstream",
+        "upstreamUrl": "https://github.com/davila7/claude-code-templates.git",
+        "upstreamSite": "https://www.aitmpl.com/",
+        "upstreamCommit": "27c23cd",
+        "importedAt": "2026-08-13",
+        "updatePolicy": "re-run scripts/import-aitmpl.mjs against a fresh upstream checkout"
+      }
+    }
+  ]
+}

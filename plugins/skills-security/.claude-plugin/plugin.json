@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "skills-security",
+  "version": "1.0.0",
+  "description": "Skills — security (47): Active Directory Attacks, API Fuzzing for Bug Bounty, api-security-best-practices, api-security-testing, AWS Penetration Testing, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "skills",
+    "security"
+  ],
+  "skills": "./skills/"
+}

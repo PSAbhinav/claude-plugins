@@ -1,0 +1,10 @@
+{
+  "name": "skills-enterprise-communication",
+  "description": "Skills — enterprise-communication (33): backend-to-frontend-handoff-docs, brand-guidelines, capa-officer, daily-meeting-update, Data Privacy Compliance, ….",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "skills": "./skills/"
+}

@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "commands-team",
+  "version": "1.0.0",
+  "description": "Slash commands — team (14): architecture-review, decision-quality-analyzer, dependency-mapper, estimate-assistant, issue-triage, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "commands",
+    "team"
+  ],
+  "commands": "./commands/"
+}

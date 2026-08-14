@@ -1,0 +1,22 @@
+# agents-deep-research-team
+
+Agents — deep-research-team (16): academic-researcher, agent-overview, competitive-intelligence-analyst, data-analyst, data-researcher, ….
+
+| Name | Description |
+|---|---|
+| academic-researcher | Academic research specialist for scholarly sources, peer-reviewed papers, and academic literature. Use PROACTIVELY for research paper analysis, literature reviews, citation tracking, and academic methodology evaluation. |
+| agent-overview | [Open Deep Research Team Diagram](../../../images/research_team_diagram.html) |
+| competitive-intelligence-analyst | Competitive intelligence and market research specialist. Use PROACTIVELY for competitor analysis, market positioning research, industry trend analysis, business intelligence gathering, and strategic market insights. |
+| data-analyst | Use this agent when you need quantitative analysis, statistical insights, or data-driven research. This includes analyzing numerical data, identifying trends, creating comparisons, evaluating metrics, and suggesting data visualizations. The agent excels at fi… |
+| data-researcher | Use this agent when you need to discover, collect, and validate data from multiple sources to fuel analysis and decision-making. Invoke this agent for identifying data sources, gathering raw datasets, performing quality checks, and preparing data for downstre… |
+| fact-checker | Fact verification and source validation specialist. Use PROACTIVELY for claim verification, source credibility assessment, misinformation detection, citation validation, and information accuracy analysis. |
+| multi-source-searcher | Use when you need to find specific information across multiple sources using advanced search strategies, query optimization, and targeted information retrieval. Invoke this agent when the priority is locating precise, relevant results efficiently rather than… |
+| nia-oracle | Expert research agent specialized in leveraging Nia's knowledge tools. Use PROACTIVELY for discovering repos/docs, deep technical research, remote codebases exploration, documentation queries, and cross-agent knowledge handoffs. Automatically indexes and sear… |
+| query-clarifier | Use this agent when you need to analyze research queries for clarity and determine if user clarification is needed before proceeding with research. This agent should be invoked at the beginning of research workflows to ensure queries are specific and actionab… |
+| report-generator | Use this agent when you need to transform synthesized research findings into a comprehensive, well-structured final report. This agent excels at creating readable narratives from complex research data, organizing content logically, and ensuring proper citatio… |
+| research-analyst | Use this agent when you need comprehensive research across multiple sources with synthesis of findings into actionable insights, trend identification, and detailed reporting. Specifically:\ \ <example>\ Context: A company is planning to enter a new technology… |
+| research-brief-generator | Use this agent when you need to transform a user's research query into a structured, actionable research brief that will guide subsequent research activities. This agent takes clarified queries and converts them into comprehensive research plans with specific… |
+| research-coordinator | Use this agent when you need to strategically plan and coordinate complex research tasks across multiple specialist researchers. This agent analyzes research requirements, allocates tasks to appropriate specialists, and defines iteration strategies for compre… |
+| research-orchestrator | Use this agent when you need to coordinate a comprehensive research project that requires multiple specialized agents working in sequence. This agent manages the entire research workflow from initial query clarification through final report generation. <examp… |
+| research-synthesizer | Use this agent when you need to consolidate and synthesize findings from multiple research sources or specialist researchers into a unified, comprehensive analysis. This agent excels at merging diverse perspectives, identifying patterns across sources, highli… |
+| technical-researcher | Use this agent when you need to analyze code repositories, technical documentation, implementation details, or evaluate technical solutions. This includes researching GitHub projects, reviewing API documentation, finding code examples, assessing code quality,… |

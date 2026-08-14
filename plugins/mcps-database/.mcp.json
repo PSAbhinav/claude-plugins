@@ -1,0 +1,77 @@
+{
+  "mcpServers": {
+    "dbhub": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@bytebase/dbhub@latest"
+      ],
+      "env": {
+        "DATABASE_DSN": "<your-database-dsn>"
+      }
+    },
+    "mongodb-official": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mongodb-mcp-server@latest"
+      ],
+      "env": {
+        "MDB_MCP_CONNECTION_STRING": "<your-mongodb-connection-string>"
+      }
+    },
+    "mysql": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-mysql"
+      ],
+      "env": {
+        "MYSQL_CONNECTION_STRING": "mysql://user:password@localhost:3306/dbname"
+      }
+    },
+    "Neon": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://mcp.neon.tech/mcp"
+      ]
+    },
+    "postgres-documentation": {
+      "url": "https://mcp.tigerdata.com/docs"
+    },
+    "postgresql": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres"
+      ],
+      "env": {
+        "POSTGRES_CONNECTION_STRING": "postgresql://user:password@localhost:5432/dbname"
+      }
+    },
+    "redis": {
+      "command": "uvx",
+      "args": [
+        "--from",
+        "redis-mcp-server@latest",
+        "redis-mcp-server"
+      ],
+      "env": {
+        "REDIS_URL": "<your-redis-url>"
+      }
+    },
+    "supabase": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--read-only",
+        "--project-ref=<project-ref>"
+      ],
+      "env": {
+        "SUPABASE_ACCESS_TOKEN": "<personal-access-token>"
+      }
+    }
+  }
+}

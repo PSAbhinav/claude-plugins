@@ -1,0 +1,10 @@
+{
+  "name": "commands-game-development",
+  "description": "Slash commands — game-development (5): game-analytics-integration, game-asset-pipeline, game-performance-profiler, game-testing-framework, unity-project-setup.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "commands": "./commands/"
+}

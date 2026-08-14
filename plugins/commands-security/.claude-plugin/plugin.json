@@ -1,0 +1,16 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "commands-security",
+  "version": "1.0.0",
+  "description": "Slash commands — security (6): add-authentication-system, dependency-audit, penetration-test, secrets-scanner, security-audit, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "commands",
+    "security"
+  ],
+  "commands": "./commands/"
+}

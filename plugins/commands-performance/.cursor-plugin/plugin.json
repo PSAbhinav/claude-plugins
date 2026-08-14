@@ -1,0 +1,10 @@
+{
+  "name": "commands-performance",
+  "description": "Slash commands — performance (10): add-performance-monitoring, implement-caching-strategy, optimize-api-performance, optimize-build, optimize-bundle-size, ….",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "commands": "./commands/"
+}

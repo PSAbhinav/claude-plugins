@@ -1,0 +1,46 @@
+# agents-devops-infrastructure
+
+Agents — devops-infrastructure (40): apify-integration-expert, arm-migration, azure-iac-exporter, azure-iac-generator, azure-infra-engineer, ….
+
+| Name | Description |
+|---|---|
+| apify-integration-expert | Expert agent for integrating Apify Actors into codebases. Handles Actor selection, workflow design, implementation across JavaScript/TypeScript and Python, testing, and production-ready deployment. Use proactively whenever the user wants to scrape a website,… |
+| arm-migration | Arm Cloud Migration Assistant accelerates moving x86 workloads to Arm infrastructure. It scans the repository for architecture assumptions, portability issues, container base image and dependency incompatibilities, and recommends Arm-optimized changes. It can… |
+| azure-iac-exporter | Export existing Azure resources to Infrastructure as Code templates via Azure Resource Graph analysis, Azure Resource Manager API calls, and azure-iac-generator integration. Use this skill when the user asks to export, convert, migrate, or extract existing Az… |
+| azure-iac-generator | Central hub for generating Infrastructure as Code (Bicep, ARM, Terraform, Pulumi) with format-specific validation and best practices. Use this skill when the user asks to generate, create, write, or build infrastructure code, deployment code, or IaC templates… |
+| azure-infra-engineer | Use when designing, deploying, or managing Azure infrastructure with focus on network architecture, Entra ID integration, PowerShell automation, and Bicep IaC. Specifically:\ \ <example>\ Context: Building a multi-region Azure infrastructure with hybrid ident… |
+| azure-logic-apps-expert | Expert guidance for Azure Logic Apps development focusing on workflow design, integration patterns, and JSON-based Workflow Definition Language. |
+| azure-principal-architect | Provide expert Azure Principal Architect guidance using Azure Well-Architected Framework principles and Microsoft best practices. |
+| azure-saas-architect | Provide expert Azure SaaS Architect guidance focusing on multitenant applications using Azure Well-Architected SaaS principles and Microsoft best practices. |
+| azure-verified-modules-bicep | Create, update, or review Azure IaC in Bicep using Azure Verified Modules (AVM). |
+| azure-verified-modules-terraform | Create, update, or review Azure IaC in Terraform using Azure Verified Modules (AVM). |
+| bicep-implement | Act as an Azure Bicep Infrastructure as Code coding specialist that creates Bicep templates. |
+| bicep-plan | Act as implementation planner for your Azure Bicep Infrastructure as Code task. |
+| cloud-architect | Use this agent when you need to design, evaluate, or optimize cloud infrastructure architecture at scale. Invoke when designing multi-cloud strategies, planning cloud migrations, implementing disaster recovery, optimizing cloud costs, or ensuring security/com… |
+| deployment-engineer | Use this agent when designing, building, or optimizing CI/CD pipelines and deployment automation strategies. Specifically:\ \ <example>\ Context: A team wants to accelerate their release process and reduce deployment friction.\ user: \"Our deployments are slo… |
+| devops-engineer | Use this agent when building or optimizing infrastructure automation, CI/CD pipelines, containerization strategies, and deployment workflows to accelerate software delivery while maintaining reliability and security. Specifically:\ \ <example>\ Context: A tea… |
+| devops-expert | DevOps specialist following the infinity loop principle (Plan → Code → Build → Test → Release → Deploy → Operate → Monitor) with focus on automation, collaboration, and continuous improvement |
+| devops-incident-responder | Use when actively responding to production incidents, diagnosing critical service failures, or conducting incident postmortems to implement permanent fixes and preventative measures. Specifically:\ \ <example>\ Context: A critical database service has gone do… |
+| devops-troubleshooter | Production troubleshooting and incident response specialist. Use PROACTIVELY for debugging issues, log analysis, deployment failures, monitoring setup, and root cause analysis. |
+| incident-responder | Use this agent when an active security breach, service outage, or operational incident requires immediate response, evidence preservation, and coordinated recovery. Specifically:\ \ <example>\ Context: Your production database has gone offline and customers a… |
+| kubernetes-specialist | Use this agent when you need to design, deploy, configure, or troubleshoot Kubernetes clusters and workloads in production environments. Specifically:\ \ <example>\ Context: Your team needs to set up a production Kubernetes cluster with high availability, sec… |
+| kusto-assistant | Expert KQL assistant for live Azure Data Explorer analysis via Azure MCP server |
+| m365-admin | Use when automating Microsoft 365 administrative tasks including Exchange Online mailbox provisioning, Teams collaboration management, SharePoint site configuration, license lifecycle management, and Graph API-driven identity automation. Specifically:\ \ <exa… |
+| microservices-architect | Use when designing distributed system architecture, decomposing monolithic applications into independent microservices, or establishing communication patterns between services at scale. Specifically:\ \ <example>\ Context: A company has a monolithic e-commerc… |
+| microsoft-study-mode | Activate your personal Microsoft/Azure tutor - learn through guided discovery, not just answers. |
+| monitoring-specialist | Monitoring and observability infrastructure specialist. Use PROACTIVELY for metrics collection, alerting systems, log aggregation, distributed tracing, SLA monitoring, and performance dashboards. |
+| neo4j-docker-client-generator | AI agent that generates simple, high-quality Python Neo4j client libraries from GitHub issues with proper best practices |
+| network-engineer | Use this agent when designing, optimizing, or troubleshooting cloud and hybrid network infrastructures, or when addressing network security, performance, or reliability challenges. Specifically:\ \ <example>\ Context: User needs to design a multi-region netwo… |
+| octopus-deploy-release-notes-mcp | Generates markdown release notes for an Octopus Deploy release by combining Octopus release/build-information data with commit details (message, author, date, diff) fetched from GitHub. Use when a user asks for release notes, a changelog, or a deployment summ… |
+| platform-engineer | Use when building or improving internal developer platforms (IDPs), designing self-service infrastructure, or optimizing developer workflows to reduce friction and accelerate delivery. The platform-engineer agent specializes in designing platform architecture… |
+| se-gitops-ci-specialist | DevOps specialist for CI/CD pipelines, deployment debugging, and GitOps workflows focused on making deployments boring and reliable |
+| security-engineer | Security infrastructure and compliance specialist. Use PROACTIVELY for security architecture, compliance frameworks, vulnerability management, security automation, and incident response. |
+| sre-engineer | Use this agent when you need to establish or improve system reliability through SLO definition, error budget management, and automation. Invoke when implementing SLI/SLO frameworks, reducing operational toil, designing fault-tolerant systems, conducting chaos… |
+| terraform-azure-implement | Act as an Azure Terraform Infrastructure as Code coding specialist that creates and reviews Terraform for Azure resources. |
+| terraform-azure-planning | Act as implementation planner for your Azure Terraform Infrastructure as Code task. |
+| terraform-engineer | Use when building, refactoring, or scaling infrastructure as code using Terraform with focus on multi-cloud deployments, module architecture, and enterprise-grade state management. Specifically:\ \ <example>\ Context: Team needs to migrate AWS infrastructure… |
+| terraform-iac-reviewer | Terraform-focused agent that reviews and creates safer IaC changes with emphasis on state safety, least privilege, module patterns, drift detection, and plan/apply discipline |
+| terraform-specialist | Terraform and Infrastructure as Code specialist. Use PROACTIVELY for Terraform modules, state management, IaC best practices, provider configurations, workspace management, and drift detection. |
+| terragrunt-expert | Expert Terragrunt specialist mastering infrastructure orchestration, DRY configurations, and multi-environment deployments. Masters stacks, units, dependency management, and scalable IaC patterns with focus on code reuse, maintainability, and enterprise-grade… |
+| vercel-deployment-specialist | Expert in Vercel platform features, edge functions, middleware, and deployment strategies. Use PROACTIVELY for Vercel deployments, performance optimization, and platform configuration. |
+| windows-infra-admin | Use when managing Windows Server infrastructure, Active Directory, DNS, DHCP, and Group Policy configurations, especially for enterprise-scale deployments requiring safe automation and compliance validation. Specifically:\ \ <example>\ Context: Organization n… |

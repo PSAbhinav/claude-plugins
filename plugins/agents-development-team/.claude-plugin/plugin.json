@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/plugin.schema.json",
+  "name": "agents-development-team",
+  "version": "1.0.0",
+  "description": "Agents — development-team (17): backend-architect, backend-developer, cli-ui-designer, code-architect, code-explorer, ….",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  },
+  "homepage": "https://github.com/PSAbhinav/claude-plugins",
+  "keywords": [
+    "agents",
+    "development-team"
+  ]
+}

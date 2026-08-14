@@ -1,0 +1,9 @@
+{
+  "name": "agents-obsidian-ops-team",
+  "description": "Agents — obsidian-ops-team (7): connection-agent, content-curator, metadata-agent, moc-agent, review-agent, ….",
+  "version": "1.0.0",
+  "author": {
+    "name": "Claude Marketplace",
+    "url": "https://github.com/PSAbhinav/claude-plugins"
+  }
+}

@@ -754,6 +754,30 @@
       }
     },
     {
+      "name": "yylo-skills",
+      "description": "YYLO agent skills: ledger task management, kanban, wiki, workflow and artifact records, project understanding, planning, benchmark studies (8 skills, MIT).",
+      "version": "2.1.0",
+      "author": {
+        "name": "yylo-dev"
+      },
+      "category": "third-party",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/yylo-dev/yylo-skills.git",
+        "ref": "main"
+      },
+      "homepage": "https://github.com/yylo-dev/yylo-skills",
+      "tags": [
+        "upstream",
+        "skills"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "updatePolicy": "tracks-upstream",
+        "note": "Installs directly from public upstream."
+      }
+    },
+    {
       "name": "agents-accessibility",
       "version": "1.0.0",
       "description": "Agents — accessibility (1): accessibility-tester.",

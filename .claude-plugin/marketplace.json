@@ -360,6 +360,33 @@
       }
     },
     {
+      "name": "security-audit",
+      "description": "Cloudflare's source-first security audit skill: guidance mode for focused reviews, or a full six-phase audit (recon, coverage-led hunting, independent validation, schema-checked findings, report).",
+      "version": "1.0.0",
+      "author": {
+        "name": "Cloudflare"
+      },
+      "category": "security",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/cloudflare/security-audit-skill.git",
+        "ref": "main",
+        "sha": "c1c8a8c1471069fb0e188eeaff69b8e8db6564a8"
+      },
+      "homepage": "https://github.com/cloudflare/security-audit-skill",
+      "tags": [
+        "upstream",
+        "security"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/cloudflare/security-audit-skill.git",
+        "license": "MIT",
+        "updatePolicy": "pinned to a reviewed upstream commit; bump sha after reviewing upstream changes",
+        "note": "Installs directly from public upstream."
+      }
+    },
+    {
       "name": "semgrep-rule-creator",
       "description": "Create custom Semgrep rules for detecting bug patterns and security vulnerabilities",
       "version": "1.2.2",

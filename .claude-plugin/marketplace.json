@@ -312,6 +312,34 @@
       }
     },
     {
+      "name": "linkedin-agent",
+      "description": "Eleven LinkedIn skills: posts from 21 hook formulas, comments, replies, profile score, weekly plan, DMs, inbox triage, carousels, repurposing, audits, and a local humanizer script. Copy-paste only; nothing is auto-posted.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Avi Grondin"
+      },
+      "category": "productivity",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/avi691/linkedin-agent-skill.git",
+        "ref": "main",
+        "sha": "e4ec4fb6f1b0e227eb9b14b31b735072db5df9cb"
+      },
+      "homepage": "https://github.com/avi691/linkedin-agent-skill",
+      "tags": [
+        "upstream",
+        "linkedin",
+        "writing"
+      ],
+      "metadata": {
+        "ownership": "upstream",
+        "upstreamUrl": "https://github.com/avi691/linkedin-agent-skill.git",
+        "license": "MIT",
+        "updatePolicy": "pinned to a reviewed upstream commit; bump sha after reviewing upstream changes",
+        "note": "Installs directly from public upstream. Reviewed 2026-10-17: no network calls, no credential handling; two local stdlib-only Python scripts."
+      }
+    },
+    {
       "name": "playwright",
       "description": "Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
       "version": "latest",

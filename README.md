@@ -14,7 +14,7 @@ installed directly from their public upstream repos.
   per-category packs covering 423 agents, 346 slash commands, 885 skills, and 92
   MCP servers, presented as native plugins.
 - **Independent community plugins** — installed straight from their public
-  upstreams (Anthropic, Cloudflare, Trail of Bits, obra, Microsoft, addyosmani, …). No private
+  upstreams (Anthropic, Cloudflare, Avi Grondin, Trail of Bits, obra, Microsoft, addyosmani, …). No private
   mirrors: each catalog entry points at the original public repo.
 - **Reference material** (`resources/reference/`) — hooks, settings, loops, and
   sandbox templates vendored for browsing only. Plugin hooks/settings execute

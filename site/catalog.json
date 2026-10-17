@@ -193,6 +193,21 @@
       "sourceInfo": "https://github.com/Kotlin/kotlin-agent-skills.git → plugins/kotlin-agent-skills"
     },
     {
+      "name": "linkedin-agent",
+      "description": "Eleven LinkedIn skills: posts from 21 hook formulas, comments, replies, profile score, weekly plan, DMs, inbox triage, carousels, repurposing, audits, and a local humanizer script. Copy-paste only; nothing is auto-posted.",
+      "version": "1.0.0",
+      "category": "productivity",
+      "tags": [
+        "upstream",
+        "linkedin",
+        "writing"
+      ],
+      "author": "Avi Grondin",
+      "homepage": "https://github.com/avi691/linkedin-agent-skill",
+      "vendored": false,
+      "sourceInfo": "https://github.com/avi691/linkedin-agent-skill.git"
+    },
+    {
       "name": "playwright",
       "description": "Browser automation and end-to-end testing MCP server by Microsoft. Enables Claude to interact with web pages, take screenshots, fill forms, click elements, and perform automated browser testing workflows.",
       "version": "latest",
